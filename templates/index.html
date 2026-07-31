@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathFinder | Smart Career Exploration Engine</title>
+    <meta name="description" content="Discover your next career with PathFinder, using RIASEC psychometrics and advanced matching algorithms.">
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c084fc',
+                            400: '#a855f7',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        darkBg: '#090a0f',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="relative overflow-x-hidden">
+
+    <!-- Background Glow Bubbles -->
+    <div class="glow-bubble bg-indigo-500 w-[400px] h-[400px] -left-48 top-12"></div>
+    <div class="glow-bubble bg-purple-500 w-[500px] h-[500px] -right-48 top-1/3"></div>
+    <div class="glow-bubble bg-pink-500 w-[350px] h-[350px] left-1/3 bottom-12"></div>
+
+    <div class="container mx-auto px-4 py-8 max-w-4xl min-h-screen flex flex-col justify-between relative z-10">
+        
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-10 py-4 border-b border-white/5">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-brand-500/20">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-extrabold tracking-tight text-white">PATH<span class="text-brand-400">FINDER</span></h1>
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Career Matching Engine</p>
+                </div>
+            </div>
+            <div class="text-xs text-gray-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Phase 2 (Active)</span>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-grow flex items-center justify-center py-6">
+            
+            <!-- Intake Card -->
+            <div id="intake-container" class="w-full glass-panel rounded-3xl p-8 border border-white/10 shadow-2xl relative overflow-hidden transition-all duration-500">
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    
+                    <!-- Left column: Terrain Winding Path (Phase 2 Animation) -->
+                    <div class="hidden md:flex flex-col justify-between items-center bg-white/5 border border-white/5 rounded-2xl p-4 relative overflow-hidden">
+                        <div class="text-center w-full z-10">
+                            <h4 class="text-[9px] uppercase font-extrabold tracking-widest text-gray-400">Path Calibration</h4>
+                            <div id="path-pct-text" class="text-base font-black text-brand-400 mt-0.5">0% Paved</div>
+                        </div>
+                        
+                        <!-- SVG Winding curve -->
+                        <div class="w-full flex-grow flex items-center justify-center min-h-[300px] relative">
+                            <svg id="terrain-svg" class="w-full h-[320px]" viewBox="0 0 100 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <filter id="paved-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                                        <feMerge>
+                                            <feMergeNode in="blur"></feMergeNode>
+                                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                                        </feMerge>
+                                    </filter>
+                                    <linearGradient id="road-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="0%" stop-color="#8b5cf6"></stop>
+                                        <stop offset="50%" stop-color="#6366f1"></stop>
+                                        <stop offset="100%" stop-color="#ec4899"></stop>
+                                    </linearGradient>
+                                    <!-- Earthy mud gradient -->
+                                    <linearGradient id="mud-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="0%" stop-color="#3c1e08"></stop>
+                                        <stop offset="35%" stop-color="#54301a"></stop>
+                                        <stop offset="70%" stop-color="#72472b"></stop>
+                                        <stop offset="100%" stop-color="#8c5d3a"></stop>
+                                    </linearGradient>
+                                    <!-- Turbulence mud filter -->
+                                    <filter id="mud-texture" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="5" result="noise"></feTurbulence>
+                                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+                                    </filter>
+                                </defs>
+                                
+                                <!-- Background Mud Path Segments (Winding, connected quadratic curves with mud texture) -->
+                                <g id="mud-path-group" filter="url(#mud-texture)">
+                                    <path id="mud-seg-0" d="M 50 380 Q 42 365, 35 350" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-1" d="M 35 350 Q 28 335, 22 320" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-2" d="M 22 320 Q 18 305, 20 290" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-3" d="M 20 290 Q 22 275, 30 260" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-4" d="M 30 260 Q 40 245, 50 230" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-5" d="M 50 230 Q 60 215, 70 200" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-6" d="M 70 200 Q 76 185, 78 170" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-7" d="M 78 170 Q 78 155, 75 140" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-8" d="M 75 140 Q 70 125, 62 110" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-9" d="M 62 110 Q 52 95, 45 80" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-10" d="M 45 80 Q 38 65, 35 50" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                    <path id="mud-seg-11" d="M 35 50 Q 40 35, 50 20" stroke="url(#mud-gradient)" stroke-width="12" stroke-linecap="round" fill="none" />
+                                </g>
+                                
+                                <!-- Foreground Paved Path Segments (Become visible when question is answered) -->
+                                <g id="paved-path-group">
+                                    <path id="paved-seg-0" d="M 50 380 Q 42 365, 35 350" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-1" d="M 35 350 Q 28 335, 22 320" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-2" d="M 22 320 Q 18 305, 20 290" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-3" d="M 20 290 Q 22 275, 30 260" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-4" d="M 30 260 Q 40 245, 50 230" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-5" d="M 50 230 Q 60 215, 70 200" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-6" d="M 70 200 Q 76 185, 78 170" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-7" d="M 78 170 Q 78 155, 75 140" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-8" d="M 75 140 Q 70 125, 62 110" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-9" d="M 62 110 Q 52 95, 45 80" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-10" d="M 45 80 Q 38 65, 35 50" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                    <path id="paved-seg-11" d="M 35 50 Q 40 35, 50 20" stroke="url(#road-gradient)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#paved-glow)" style="opacity: 0;" />
+                                </g>
+
+                                <!-- Pathfinder Digger dot -->
+                                <circle id="path-digger" cx="50" cy="380" r="7" fill="#ffffff" style="opacity: 0;" />
+                            </svg>
+                            <!-- Sparks container -->
+                            <div id="sparks-container" class="absolute inset-0 pointer-events-none"></div>
+                        </div>
+                        
+                        <div class="text-[8px] text-gray-500 text-center font-bold uppercase tracking-wider">
+                            Paving terrain...
+                        </div>
+                    </div>
+                    
+                    <!-- Right column: Wizard form -->
+                    <div class="col-span-1 md:col-span-3 flex flex-col justify-between">
+                        
+                        <!-- Progress Header -->
+                        <div class="mb-6">
+                            <div class="flex justify-between text-[10px] text-gray-400 uppercase tracking-wider mb-2 font-bold">
+                                <span id="step-indicator-text">Step 1 of 4: Psychometrics</span>
+                                <span id="step-progress-percent">25%</span>
+                            </div>
+                            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+                                <div id="step-progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-indigo-500 transition-all duration-500" style="width: 25%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Form Form -->
+                        <form id="intake-form" onsubmit="submitForm(event)">
+                            
+                            <!-- STEP 1: Situational Questionnaire (Replacing sliders) -->
+                            <div id="step-1" class="step-pane space-y-6">
+                                <div class="mb-4">
+                                    <h2 class="text-2xl font-bold text-white mb-1">Career Terrain Profiler</h2>
+                                    <p class="text-xs text-gray-400">Complete these situational scenarios to help calibrate your natural RIASEC traits. We will dynamically pave the path as you answer.</p>
+                                </div>
+                                
+                                <div id="question-card" class="bg-white/5 p-6 rounded-2xl border border-white/5 relative transition-all duration-300 min-h-[220px]">
+                                    <div class="flex justify-between items-center mb-4 border-b border-white/5 pb-3">
+                                        <span class="text-[10px] font-bold text-brand-400 uppercase tracking-widest" id="question-index-text">Question 1 of 12</span>
+                                        <span class="text-[10px] text-gray-500" id="question-domain-hint">RIASEC Profiler</span>
+                                    </div>
+                                    <h3 id="question-title" class="text-base font-bold text-white leading-snug mb-6"></h3>
+                                    <div id="question-options" class="flex flex-col gap-3">
+                                        <!-- Choices injected dynamically -->
+                                    </div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center text-[10px] mt-4 px-1 gap-2 border-t border-white/5 pt-3">
+                                    <button type="button" onclick="prevQuestion()" id="q-prev-btn" class="text-gray-400 hover:text-white transition disabled:opacity-30 disabled:pointer-events-none flex items-center space-x-1">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                        <span>Previous</span>
+                                    </button>
+                                    <button type="button" onclick="skipQuestion()" id="q-skip-btn" class="px-3 py-1.5 rounded-lg bg-yellow-600/10 border border-yellow-500/30 text-yellow-400 hover:bg-yellow-600/25 transition-all font-bold">
+                                        Skip Question
+                                    </button>
+                                    <span class="text-gray-500 font-bold" id="q-progress-txt">0 / 12 Answered</span>
+                                    <button type="button" onclick="nextQuestion()" id="q-next-btn" class="text-gray-400 hover:text-white transition disabled:opacity-30 disabled:pointer-events-none flex items-center space-x-1">
+                                        <span>Next</span>
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2: Self-Judgement Assessment (New Phase 2 Section) -->
+                            <div id="step-2" class="step-pane hidden space-y-6">
+                                <div class="mb-4">
+                                    <h2 class="text-2xl font-bold text-white mb-1">Self-Judgement Assessment</h2>
+                                    <p class="text-xs text-gray-400">Before matching, rate how you perceive your own capabilities across three broad dimensions. We will compare this with your situational answers.</p>
+                                </div>
+                                
+                                <div class="flex flex-col gap-6 slider-container">
+                                    <!-- Creativity -->
+                                    <div class="bg-white/5 p-5 rounded-2xl border border-white/5 relative group hover:border-brand-500/20 transition-all">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label class="text-sm font-semibold text-white flex flex-col">
+                                                <span>Creativity & Innovation</span>
+                                                <span class="text-[10px] text-gray-400 font-normal mt-0.5">Artistic expression, design focus, and original thinking</span>
+                                            </label>
+                                            <span class="text-sm font-black text-brand-400" id="val-self-creativity">5</span>
+                                        </div>
+                                        <input type="range" name="self_creativity" min="0" max="10" value="5" step="1" oninput="document.getElementById('val-self-creativity').innerText = this.value">
+                                    </div>
+
+                                    <!-- Analytical Logic -->
+                                    <div class="bg-white/5 p-5 rounded-2xl border border-white/5 relative group hover:border-brand-500/20 transition-all">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label class="text-sm font-semibold text-white flex flex-col">
+                                                <span>Analytical Logic</span>
+                                                <span class="text-[10px] text-gray-400 font-normal mt-0.5">Logical thinking, scientific/technical problem solving, and structured analysis</span>
+                                            </label>
+                                            <span class="text-sm font-black text-indigo-400" id="val-self-analytical">5</span>
+                                        </div>
+                                        <input type="range" name="self_analytical" min="0" max="10" value="5" step="1" oninput="document.getElementById('val-self-analytical').innerText = this.value">
+                                    </div>
+
+                                    <!-- Social Leadership -->
+                                    <div class="bg-white/5 p-5 rounded-2xl border border-white/5 relative group hover:border-brand-500/20 transition-all">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label class="text-sm font-semibold text-white flex flex-col">
+                                                <span>Social Leadership & Helping</span>
+                                                <span class="text-[10px] text-gray-400 font-normal mt-0.5">Cooperation, empathy, leadership motivation, and persuading others</span>
+                                            </label>
+                                            <span class="text-sm font-black text-pink-400" id="val-self-social">5</span>
+                                        </div>
+                                        <input type="range" name="self_social" min="0" max="10" value="5" step="1" oninput="document.getElementById('val-self-social').innerText = this.value">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Likes / Dislikes (Shifted to step 3) -->
+                            <div id="step-3" class="step-pane hidden space-y-6">
+                                <div class="mb-4">
+                                    <h2 class="text-2xl font-bold text-white mb-2">Likes & Dislikes</h2>
+                                    <p class="text-sm text-gray-400">Click a tag to toggle your preference: <span class="text-emerald-400 font-semibold">Like (Green)</span>, <span class="text-rose-400 font-semibold">Dislike (Red)</span>, or <span class="text-gray-400">Neutral</span>. <br><span class="text-xs text-rose-500/80 font-semibold">* Note: Disliking a tag filters out careers that strictly require that skill.</span></p>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="tags-grid">
+                                    <!-- JS will inject tags dynamically for interaction -->
+                                </div>
+                            </div>
+
+                            <!-- STEP 4: Intent & Constraints (Shifted to step 4) -->
+                            <div id="step-4" class="step-pane hidden space-y-6">
+                                <div class="mb-4">
+                                    <h2 class="text-2xl font-bold text-white mb-2">Intent & Constraints</h2>
+                                    <p class="text-sm text-gray-400">Help us understand your commitment level, background, and budget limits.</p>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Intent -->
+                                    <div class="flex flex-col space-y-2">
+                                        <label class="text-sm font-semibold text-gray-300">Commitment Intent</label>
+                                        <select name="intent" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-brand-500 transition">
+                                            <option value="Full-time" class="bg-gray-900">Full-time Career Path</option>
+                                            <option value="Part-time" class="bg-gray-900">Part-time/Freelance Path</option>
+                                            <option value="Hobby" class="bg-gray-900">Side Project / Hobby Exploration</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Current Situation / Anchor -->
+                                    <div class="flex flex-col space-y-2">
+                                        <label class="text-sm font-semibold text-gray-300">Current Situation / Anchor</label>
+                                        <select name="current_role" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-brand-500 transition">
+                                            <option value="Student" class="bg-gray-900">Student</option>
+                                            <option value="Employed" class="bg-gray-900">Employed</option>
+                                            <option value="Unemployed" class="bg-gray-900">Unemployed</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Financial Flexibility -->
+                                    <div class="flex flex-col space-y-2 md:col-span-2">
+                                        <label class="text-sm font-semibold text-gray-300">Financial Flexibility (Budget for exploring a new field)</label>
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <!-- Low Tier -->
+                                            <label class="cursor-pointer border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-all text-xs font-semibold focus-within:border-brand-500" id="lbl-flex-low">
+                                                <input type="radio" name="financial_flexibility" value="Low" class="sr-only" onchange="selectFlexibility('Low')">
+                                                <span class="text-brand-400 text-base mb-1">$</span>
+                                                <span class="text-white">Low Flexibility</span>
+                                                <span class="text-[9px] text-gray-500 mt-1">Self-study / free bootcamps</span>
+                                            </label>
+                                            <!-- Medium Tier -->
+                                            <label class="cursor-pointer border border-brand-500 rounded-xl p-4 flex flex-col items-center justify-center text-center bg-brand-500/5 hover:bg-white/5 transition-all text-xs font-semibold focus-within:border-brand-500" id="lbl-flex-medium">
+                                                <input type="radio" name="financial_flexibility" value="Medium" class="sr-only" checked onchange="selectFlexibility('Medium')">
+                                                <span class="text-brand-400 text-base mb-1">$$</span>
+                                                <span class="text-white">Moderate</span>
+                                                <span class="text-[9px] text-gray-500 mt-1">Paid courses & certs</span>
+                                            </label>
+                                            <!-- High Tier -->
+                                            <label class="cursor-pointer border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-all text-xs font-semibold focus-within:border-brand-500" id="lbl-flex-high">
+                                                <input type="radio" name="financial_flexibility" value="High" class="sr-only" onchange="selectFlexibility('High')">
+                                                <span class="text-brand-400 text-base mb-1">$$$</span>
+                                                <span class="text-white">High Flexibility</span>
+                                                <span class="text-[9px] text-gray-500 mt-1">Bootcamps & full pivots</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Primary Driver -->
+                                    <div class="flex flex-col space-y-2 md:col-span-2">
+                                        <label class="text-sm font-semibold text-gray-300">Primary Career Driver</label>
+                                        <select name="driver" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-brand-500 transition">
+                                            <option value="Passion" class="bg-gray-900">Personal Satisfaction / Passion</option>
+                                            <option value="Money" class="bg-gray-900">Money / High Compensation</option>
+                                            <option value="Balance" class="bg-gray-900">Work-Life Balance & Flexibility</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Footer -->
+                            <div class="mt-10 pt-6 border-t border-white/5 flex justify-between">
+                                <button type="button" id="back-btn" onclick="prevStep()" class="px-6 py-3 rounded-xl border border-white/10 text-white font-medium hover:bg-white/5 transition-all opacity-0 pointer-events-none">
+                                    Back
+                                </button>
+                                <button type="button" id="next-btn" onclick="nextStep()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 text-white font-semibold shadow-lg shadow-brand-500/25 hover:from-brand-500 hover:to-indigo-500 transition-all flex items-center space-x-2">
+                                    <span>Next Step</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                                <button type="submit" id="submit-btn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold shadow-lg shadow-emerald-500/25 hover:from-emerald-400 hover:to-teal-400 transition-all hidden flex items-center space-x-2">
+                                    <span>Generate Matches</span>
+                                    <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loader Screen -->
+            <div id="loader-container" class="hidden w-full max-w-md bg-transparent text-center space-y-6 py-12">
+                <div class="relative w-24 h-24 mx-auto flex items-center justify-center">
+                    <div class="absolute w-full h-full border-4 border-t-brand-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+                    <div class="absolute w-4/5 h-4/5 border-4 border-t-indigo-400 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin" style="animation-direction: reverse; animation-duration: 1.5s;"></div>
+                    <div class="absolute w-3/5 h-3/5 border-4 border-t-pink-400 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin" style="animation-duration: 2s;"></div>
+                    <svg class="w-6 h-6 text-brand-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                    </svg>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-bold text-white tracking-wide">Processing Profiles...</h3>
+                    <p class="text-xs text-gray-400" id="loader-message">Evaluating psychometrics against RIASEC database...</p>
+                </div>
+            </div>
+
+            <!-- Results Dashboard -->
+            <div id="results-container" class="hidden w-full space-y-8 animate-fade-in">
+                
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/5 border border-white/5 rounded-3xl p-6 glass-panel">
+                    <div>
+                        <span class="text-[10px] text-brand-400 font-extrabold uppercase tracking-widest bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Analysis Completed</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-3">Your Career Matches</h2>
+                        <p class="text-sm text-gray-400 mt-1">Select a matching career card to build your visual milestone pathway.</p>
+                    </div>
+                    <button onclick="resetApp()" class="px-5 py-2.5 rounded-xl border border-white/10 text-xs font-semibold text-white hover:bg-white/5 transition flex items-center space-x-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5"></path>
+                        </svg>
+                        <span>Start Over</span>
+                    </button>
+                </div>
+
+                <!-- High Fidelity Calibration Banner & Alignment Score (Phase 2 Component) -->
+                <div id="alignment-score-container" class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 p-6 rounded-3xl glass-panel relative overflow-hidden transition-all duration-500">
+                    <div class="space-y-1">
+                        <h3 class="text-base font-bold text-white tracking-tight flex items-center space-x-2">
+                            <span>Signal Alignment Score:</span>
+                            <span id="alignment-pct-badge" class="text-lg font-black text-brand-400">0%</span>
+                        </h3>
+                        <p id="alignment-explanation-text" class="text-[11px] text-gray-400 max-w-xl">
+                            This score measures the similarity between your self-judged characteristics and your computed situational choice profile.
+                        </p>
+                    </div>
+                    <div id="signal-integrity-badge" class="px-4 py-2 rounded-xl text-[10px] font-extrabold flex items-center space-x-2 border transition-all duration-500">
+                        <span class="w-2.5 h-2.5 rounded-full"></span>
+                        <span id="signal-integrity-label">Unknown</span>
+                    </div>
+                </div>
+
+                <!-- Recommendations Cards -->
+                <div class="grid grid-cols-1 gap-6 blurry-target" id="matches-grid">
+                    <!-- JS will inject matches here dynamically -->
+                </div>
+
+                <!-- Load More Matches -->
+                <div class="flex justify-center mt-8 hidden" id="show-more-container">
+                    <button id="show-more-btn" onclick="showMoreResults()" class="px-8 py-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-sm font-bold text-white transition flex items-center space-x-2 shadow-lg hover:border-brand-500/20">
+                        <span>Show More Recommendations</span>
+                        <svg class="w-4.5 h-4.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CAREER PATH DETAIL VIEW (Phase 2 Component) -->
+            <div id="path-detail-container" class="hidden w-full space-y-8 animate-fade-in">
+                <!-- Back Header -->
+                <button onclick="backToMatches()" class="text-sm font-semibold text-brand-300 hover:text-brand-400 flex items-center space-x-2 transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span>Back to Recommendations</span>
+                </button>
+
+                <!-- Detailed Card -->
+                <div class="glass-panel border border-white/10 rounded-3xl p-8 space-y-6 relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                        <div>
+                            <span class="text-[10px] text-emerald-400 font-extrabold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Interactive Roadmap</span>
+                            <h2 class="text-4xl font-extrabold text-white mt-3" id="detail-career-name">Prompt Engineer</h2>
+                            <p class="text-sm text-gray-400 mt-2 max-w-xl" id="detail-career-desc">Designs and refines AI prompts to achieve optimal responses from large language models.</p>
+                        </div>
+                        <div class="flex flex-col items-end text-xs space-y-1.5 text-gray-400 flex-shrink-0" id="detail-market-badges">
+                            <!-- Salary & Growth badges -->
+                        </div>
+                    </div>
+
+                    <!-- DUAL MODE SPEED SELECTOR -->
+                    <div class="bg-white/5 border border-white/5 rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div>
+                            <h4 class="text-sm font-bold text-white mb-1">Select Exploration Pace</h4>
+                            <p class="text-xs text-gray-400 max-w-sm">Scale the milestone weekly commitment hours and timelines depending on your availability anchors.</p>
+                        </div>
+                        
+                        <!-- Toggle Switch -->
+                        <div class="flex bg-gray-950 p-1.5 rounded-2xl border border-white/5 relative w-72">
+                            <button id="btn-pace-part" onclick="setPace('part')" class="flex-1 py-2 text-xs font-bold text-white rounded-xl transition duration-300 bg-brand-600 shadow-md">
+                                Part-Time (Side-Hustle)
+                            </button>
+                            <button id="btn-pace-full" onclick="setPace('full')" class="flex-1 py-2 text-xs font-bold text-gray-400 rounded-xl transition duration-300">
+                                Full-Time (Pivot)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMIC PACE METRICS -->
+                    <div class="grid grid-cols-3 gap-4 border-t border-b border-white/5 py-6">
+                        <div class="text-center">
+                            <span class="text-xs text-gray-500 uppercase tracking-wider block font-semibold mb-1">Weekly Commitment</span>
+                            <span class="text-2xl font-black text-white" id="stat-weekly-hours">8-10 hrs/wk</span>
+                        </div>
+                        <div class="text-center border-l border-r border-white/5">
+                            <span class="text-xs text-gray-500 uppercase tracking-wider block font-semibold mb-1">Est. Time to Entry</span>
+                            <span class="text-2xl font-black text-brand-400" id="stat-duration">20 Weeks</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-xs text-gray-500 uppercase tracking-wider block font-semibold mb-1">Pace Focus</span>
+                            <span class="text-xs font-bold text-indigo-300 leading-snug block" id="stat-pace-desc">Slow & steady exploration alongside current job</span>
+                        </div>
+                    </div>
+
+                    <!-- STEPPING STONES PROGRESS BAR -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs text-gray-400">
+                            <span class="font-bold">Roadmap Milestone Progress</span>
+                            <span id="detail-progress-percent" class="font-bold text-brand-300">0% Completed</span>
+                        </div>
+                        <div class="w-full bg-white/5 h-2.5 rounded-full overflow-hidden">
+                            <div id="detail-progress-bar" class="h-full bg-gradient-to-r from-emerald-500 to-brand-500 transition-all duration-500" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- VISUAL STEPPING STONE TIMELINE -->
+                    <div class="space-y-6 relative pl-6 border-l border-white/10" id="detail-timeline-grid">
+                        <!-- JS will inject timeline items here dynamically -->
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-12 py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 space-y-4 md:space-y-0">
+            <div>&copy; 2026 PathFinder Match Engine. Built in pair-programming.</div>
+            <div class="flex space-x-4">
+                <span>RIASEC Framework v1.2</span>
+                <span>•</span>
+                <span>Milestone Quizzes</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- QUIZ MODAL OVERLAY (Phase 2 Interactive Component) -->
+    <div id="quiz-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md hidden transition-all duration-300">
+        <div class="glass-panel border border-white/10 w-full max-w-lg rounded-3xl p-8 shadow-2xl relative animate-fade-in mx-4 space-y-6">
+            
+            <!-- Close Button -->
+            <button onclick="closeQuizModal()" class="absolute right-6 top-6 text-gray-400 hover:text-white transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Quiz Header -->
+            <div>
+                <span class="text-[10px] text-brand-400 font-extrabold uppercase tracking-widest bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Milestone Checkpoint</span>
+                <h3 class="text-2xl font-extrabold text-white mt-3" id="quiz-milestone-title">Figma Basics & Auto Layout</h3>
+                <p class="text-xs text-gray-400 mt-1">Answer the questions correctly to unlock the next stepping stone.</p>
+            </div>
+
+            <!-- Quiz Questions Form -->
+            <form id="quiz-form" onsubmit="submitQuiz(event)" class="space-y-6">
+                <div class="space-y-6 overflow-y-auto max-h-[350px] pr-2" id="quiz-questions-container">
+                    <!-- Dynamic rendering of questions -->
+                </div>
+
+                <!-- Footer / Status Message -->
+                <div id="quiz-status-alert" class="hidden text-xs font-semibold p-4 rounded-xl text-center"></div>
+
+                <div class="flex justify-end space-x-3 border-t border-white/5 pt-4">
+                    <button type="button" onclick="closeQuizModal()" class="px-5 py-2.5 rounded-xl border border-white/10 text-xs font-semibold text-white hover:bg-white/5 transition">
+                        Cancel
+                    </button>
+                    <button type="submit" id="quiz-submit-btn" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 text-xs font-bold text-white hover:from-brand-500 hover:to-indigo-500 transition shadow-lg shadow-brand-500/25">
+                        Submit Answers
+                    </button>
+                    <button type="button" id="quiz-unlock-btn" onclick="confirmQuizSuccess()" class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-xs font-bold text-white hover:from-emerald-400 hover:to-teal-400 transition shadow-lg shadow-emerald-500/25">
+                        Close & Unlock Next Step
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- UI Interaction Scripts -->
+    <script>
+        // Tag DB & Preference Management
+        const tagsList = [
+            { id: "coding", label: "Software & Coding" },
+            { id: "remote-work", label: "Remote Work" },
+            { id: "client-interaction", label: "Client Interaction" },
+            { id: "creative-design", label: "Creative Design" },
+            { id: "data-analysis", label: "Data Analysis" },
+            { id: "leadership", label: "Leadership & Strategy" },
+            { id: "writing", label: "Technical Writing" },
+            { id: "security", label: "Network Security" },
+            { id: "public-speaking", label: "Public Speaking" },
+            { id: "research", label: "Deep Research" }
+        ];
+
+        const tagPreferences = {};
+        tagsList.forEach(tag => tagPreferences[tag.id] = 0);
+
+        // Phase 2: Situational RIASEC Questions Database (Balanced 8 options per trait)
+        const questionnaireQuestions = [
+            {
+                question: "You need to resolve a major bottleneck in a system. What's your first instinct?",
+                options: [
+                    { text: "Roll up my sleeves and repair physical hardware or edit files directly.", trait: "R" },
+                    { text: "Research the root cause and build a logical hypothesis.", trait: "I" },
+                    { text: "Brainstorm creative workarounds or redesign the flow entirely.", trait: "A" },
+                    { text: "Schedule a meeting to coordinate a structured team resolution.", trait: "C" }
+                ],
+                domain: "Realistic / Investigative / Artistic / Conventional"
+            },
+            {
+                question: "Choose your ideal weekend workshop topic:",
+                options: [
+                    { text: "Creative visual arts or digital illustration.", trait: "A" },
+                    { text: "Helping local community members resolve conflicts or teach a skill.", trait: "S" },
+                    { text: "Pitching business ideas and negotiation tactics.", trait: "E" },
+                    { text: "Setting up smart-home hardware or fixing a car engine.", trait: "R" }
+                ],
+                domain: "Artistic / Social / Enterprising / Realistic"
+            },
+            {
+                question: "Which tool or interface makes you feel most in control?",
+                options: [
+                    { text: "A command-line interface or mechanical toolset.", trait: "R" },
+                    { text: "A discussion board or coaching portal for supporting peers.", trait: "S" },
+                    { text: "A whiteboard with sticky notes for planning business growth.", trait: "E" },
+                    { text: "A design editor or digital canvas (like Figma/Canva).", trait: "A" }
+                ],
+                domain: "Realistic / Social / Enterprising / Artistic"
+            },
+            {
+                question: "What is your primary focus when reviewing a project?",
+                options: [
+                    { text: "Ensuring the data models are logically sound and accurate.", trait: "I" },
+                    { text: "Verifying that the UI/UX is beautiful and engaging.", trait: "A" },
+                    { text: "Making sure team members are supported and collaborating well.", trait: "S" },
+                    { text: "Checking if we are meeting business and revenue targets.", trait: "E" }
+                ],
+                domain: "Investigative / Artistic / Social / Enterprising"
+            },
+            {
+                question: "A close friend asks for help with their new venture. You offer to:",
+                options: [
+                    { text: "Organise their financial sheets, schedules, and administrative files.", trait: "C" },
+                    { text: "Set up their physical infrastructure, servers, or hardware.", trait: "R" },
+                    { text: "Write and deliver a pitch deck to secure early clients.", trait: "E" },
+                    { text: "Provide personal advice, coaching, and moral support.", trait: "S" }
+                ],
+                domain: "Conventional / Realistic / Enterprising / Social"
+            },
+            {
+                question: "How do you react when encountering a complex, unmapped problem?",
+                options: [
+                    { text: "I search academic publications and read documentation to understand it.", trait: "I" },
+                    { text: "I design a custom, unconventional solution without instructions.", trait: "A" },
+                    { text: "I ask colleagues and peers to share their experiences and help.", trait: "S" },
+                    { text: "I break it down into a highly detailed checklist and follow standard protocols.", trait: "C" }
+                ],
+                domain: "Investigative / Artistic / Social / Conventional"
+            },
+            {
+                question: "You are starting a new project. What role do you naturally assume?",
+                options: [
+                    { text: "The practical developer or technician executing the task.", trait: "R" },
+                    { text: "The research scientist identifying core data patterns.", trait: "I" },
+                    { text: "The visionary leader pitching the project and driving growth.", trait: "E" },
+                    { text: "The project coordinator managing schedules, compliance, and logs.", trait: "C" }
+                ],
+                domain: "Realistic / Investigative / Enterprising / Conventional"
+            },
+            {
+                question: "If you were to mentor someone, what would you teach them?",
+                options: [
+                    { text: "How to analyze data sets and debug complex logic.", trait: "I" },
+                    { text: "How to express ideas through visual and artistic media.", trait: "A" },
+                    { text: "How to communicate effectively, build empathy, and help people.", trait: "S" },
+                    { text: "How to structure a business and lead teams to victory.", trait: "E" }
+                ],
+                domain: "Investigative / Artistic / Social / Enterprising"
+            },
+            {
+                question: "What is your favorite type of media to consume?",
+                options: [
+                    { text: "Technical documentaries, science podcasts, or research articles.", trait: "I" },
+                    { text: "Fiction, independent art magazines, or creative portfolios.", trait: "A" },
+                    { text: "Biographies of successful founders or business podcasts.", trait: "E" },
+                    { text: "How-to manuals, structured guides, or historical archives.", trait: "C" }
+                ],
+                domain: "Investigative / Artistic / Enterprising / Conventional"
+            },
+            {
+                question: "Which workspace environment do you feel most comfortable in?",
+                options: [
+                    { text: "A quiet laboratory analyzing data.", trait: "I" },
+                    { text: "A hands-on workshop building physical prototypes.", trait: "R" },
+                    { text: "A group counseling session helping people resolve conflicts.", trait: "S" },
+                    { text: "A structured office space managing logs and audits.", trait: "C" }
+                ],
+                domain: "Investigative / Realistic / Social / Conventional"
+            },
+            {
+                question: "In your leisure time, which activity do you find most satisfying?",
+                options: [
+                    { text: "Crafting physical objects, woodworking, or building custom PC rigs.", trait: "R" },
+                    { text: "Reading about philosophy, psychology, or scientific breakthroughs.", trait: "I" },
+                    { text: "Writing poetry, painting, or composing music.", trait: "A" },
+                    { text: "Organizing your home setup, scheduling plans, or tracking finances.", trait: "C" }
+                ],
+                domain: "Realistic / Investigative / Artistic / Conventional"
+            },
+            {
+                question: "What type of impact do you want to have on the world?",
+                options: [
+                    { text: "Creating tangible structures, products, or physical/code tools.", trait: "R" },
+                    { text: "Helping individuals overcome struggles and improve their lives.", trait: "S" },
+                    { text: "Pitching major reforms, scaling organizations, and driving progress.", trait: "E" },
+                    { text: "Ensuring security, order, efficiency, and compliance in systems.", trait: "C" }
+                ],
+                domain: "Realistic / Social / Enterprising / Conventional"
+            }
+        ];
+
+        // Step manager
+        let currentStep = 1;
+        const totalSteps = 4; // Questionnaire (1), Self-Judgement (2), Tags (3), Logistics (4)
+
+        // Active activeQuestionIndex and user choices list
+        let currentQuestionIndex = 0;
+        const userQuestionAnswers = Array(12).fill(undefined);
+
+        const pathPoints = [
+            { x: 50, y: 380 }, // Start
+            { x: 35, y: 350 }, // End of Q1
+            { x: 22, y: 320 }, // End of Q2
+            { x: 20, y: 290 }, // End of Q3
+            { x: 30, y: 260 }, // End of Q4
+            { x: 50, y: 230 }, // End of Q5
+            { x: 70, y: 200 }, // End of Q6
+            { x: 78, y: 170 }, // End of Q7
+            { x: 75, y: 140 }, // End of Q8
+            { x: 62, y: 110 }, // End of Q9
+            { x: 45, y: 80 },  // End of Q10
+            { x: 35, y: 50 },  // End of Q11
+            { x: 50, y: 20 }   // End of Q12
+        ];
+
+        // Results paging
+        let allResults = [];
+        let visibleResultsCount = 5;
+
+        // Career paths state tracking (Phase 2 quiz states)
+        let activeCareer = null; 
+        let activePace = 'part'; // 'part' or 'full'
+        let activeMilestone = null; // tracking which milestone is taking a quiz
+        
+        // Progress dictionary stored in localMemory
+        const userProgress = {};
+
+        function selectFlexibility(tier) {
+            const tiers = ['Low', 'Medium', 'High'];
+            tiers.forEach(t => {
+                const el = document.getElementById(`lbl-flex-${t.toLowerCase()}`);
+                if (t === tier) {
+                    el.className = "cursor-pointer border border-brand-500 rounded-xl p-4 flex flex-col items-center justify-center text-center bg-brand-500/5 hover:bg-white/5 transition-all text-xs font-semibold focus-within:border-brand-500";
+                } else {
+                    el.className = "cursor-pointer border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-all text-xs font-semibold focus-within:border-brand-500";
+                }
+            });
+        }
+
+        // Render Step UI
+        function updateStepUI() {
+            document.querySelectorAll('.step-pane').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+            const bar = document.getElementById('step-progress-bar');
+            const percentText = document.getElementById('step-progress-percent');
+            const stepText = document.getElementById('step-indicator-text');
+            
+            const progressPct = (currentStep / totalSteps) * 100;
+            bar.style.width = `${progressPct}%`;
+            percentText.innerText = `${Math.round(progressPct)}%`;
+
+            if (currentStep === 1) {
+                stepText.innerText = "Step 1 of 4: Situational Profiler";
+            } else if (currentStep === 2) {
+                stepText.innerText = "Step 2 of 4: Self-Judgement Sliders";
+            } else if (currentStep === 3) {
+                stepText.innerText = "Step 3 of 4: Preferences (Likes/Dislikes)";
+            } else {
+                stepText.innerText = "Step 4 of 4: Intent & Logistics";
+            }
+
+            const backBtn = document.getElementById('back-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (currentStep === 1) {
+                backBtn.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                backBtn.classList.remove('opacity-0', 'pointer-events-none');
+            }
+
+            if (currentStep === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function nextStep() {
+            // Guard Step 1: ensure all 12 questions are processed (either answered or skipped) before going to Step 2
+            if (currentStep === 1) {
+                const processedCount = userQuestionAnswers.filter(a => a !== undefined).length;
+                if (processedCount < 12) {
+                    alert("Please process all 12 scenarios (answer or skip) to calibrate your pathway before moving forward.");
+                    return;
+                }
+            }
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateStepUI();
+                updateSVGProgress();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepUI();
+            }
+        }
+
+        function updateSliderVal(dim, val) {
+            document.getElementById(`val-${dim}`).innerText = val;
+        }
+
+        // Render step 1 questionnaire cards
+        function renderQuestion() {
+            const q = questionnaireQuestions[currentQuestionIndex];
+            
+            document.getElementById('question-index-text').innerText = `Scenario ${currentQuestionIndex + 1} of 12`;
+            document.getElementById('question-domain-hint').innerText = q.domain;
+            document.getElementById('question-title').innerText = q.question;
+            
+            const optionsDiv = document.getElementById('question-options');
+            optionsDiv.innerHTML = '';
+            
+            q.options.forEach((opt) => {
+                const isSelected = userQuestionAnswers[currentQuestionIndex] === opt.trait;
+                let btnClass = "w-full text-left p-4 rounded-xl border transition-all text-xs font-medium flex items-center justify-between ";
+                if (isSelected) {
+                    btnClass += "bg-brand-500/10 border-brand-500 text-white shadow-md shadow-brand-500/5";
+                } else {
+                    btnClass += "bg-white/5 border-white/5 text-gray-300 hover:bg-white/10 hover:border-white/10";
+                }
+                
+                const btn = document.createElement('button');
+                btn.type = "button";
+                btn.className = btnClass;
+                btn.innerHTML = `
+                    <span>${opt.text}</span>
+                    ${isSelected ? `<svg class="w-4.5 h-4.5 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>` : ''}
+                `;
+                btn.onclick = () => selectQuestionOption(opt.trait);
+                optionsDiv.appendChild(btn);
+            });
+            
+            const answeredCount = userQuestionAnswers.filter(a => typeof a === 'string').length;
+            const skippedCount = userQuestionAnswers.filter(a => a === null).length;
+            document.getElementById('q-progress-txt').innerText = `${answeredCount} Answered / ${skippedCount} Skipped`;
+            
+            document.getElementById('q-prev-btn').disabled = currentQuestionIndex === 0;
+            document.getElementById('q-next-btn').disabled = currentQuestionIndex === 11;
+            
+            // Highlight skip button if this question is skipped
+            const skipBtn = document.getElementById('q-skip-btn');
+            if (skipBtn) {
+                if (userQuestionAnswers[currentQuestionIndex] === null) {
+                    skipBtn.className = "px-3 py-1.5 rounded-lg bg-yellow-500 text-slate-950 hover:bg-yellow-400 transition-all font-bold text-xs";
+                } else {
+                    skipBtn.className = "px-3 py-1.5 rounded-lg bg-yellow-600/10 border border-yellow-500/30 text-yellow-400 hover:bg-yellow-600/25 transition-all font-bold text-xs";
+                }
+            }
+        }
+
+        function selectQuestionOption(trait) {
+            userQuestionAnswers[currentQuestionIndex] = trait;
+            renderQuestion();
+            updateSVGProgress();
+            
+            // Auto advance
+            if (currentQuestionIndex < 11) {
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    renderQuestion();
+                    updateSVGProgress();
+                }, 220);
+            }
+        }
+
+        function skipQuestion() {
+            // Set current question answer to null (explicitly skipped)
+            userQuestionAnswers[currentQuestionIndex] = null;
+            renderQuestion();
+            updateSVGProgress();
+            
+            // Auto advance
+            if (currentQuestionIndex < 11) {
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    renderQuestion();
+                    updateSVGProgress();
+                }, 220);
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                renderQuestion();
+                updateSVGProgress();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < 11) {
+                currentQuestionIndex++;
+                renderQuestion();
+                updateSVGProgress();
+            }
+        }
+
+        // SVG clearance calculations
+        function updateSVGProgress() {
+            // Calculate progress ratio based on answered questions
+            const answeredCount = userQuestionAnswers.filter(a => typeof a === 'string').length;
+            const progressRatio = answeredCount / 12;
+            
+            document.getElementById('path-pct-text').innerText = `${Math.round(progressRatio * 100)}% Paved`;
+            
+            // Update individual path segment opacities
+            for (let i = 0; i < 12; i++) {
+                const pavedSeg = document.getElementById(`paved-seg-${i}`);
+                if (pavedSeg) {
+                    const ans = userQuestionAnswers[i];
+                    // If question is answered (a string), overlay the paved road segment. Otherwise (null/undefined), leave it unpaved (opacity: 0)
+                    if (typeof ans === 'string') {
+                        pavedSeg.classList.add('paved');
+                        pavedSeg.style.opacity = 1;
+                    } else {
+                        pavedSeg.classList.remove('paved');
+                        pavedSeg.style.opacity = 0;
+                    }
+                }
+            }
+            
+            // Digger positioning
+            const digger = document.getElementById('path-digger');
+            if (digger) {
+                let targetIndex = currentQuestionIndex;
+                if (currentStep > 1) {
+                    targetIndex = 12; // complete at the very top of winding path
+                }
+                const pt = pathPoints[targetIndex];
+                
+                digger.style.opacity = 1;
+                digger.setAttribute('cx', pt.x);
+                digger.setAttribute('cy', pt.y);
+                
+                // Spawn sparkles
+                spawnSparks(pt.x, pt.y);
+            }
+        }
+
+        function spawnSparks(x, y) {
+            const container = document.getElementById('sparks-container');
+            if (!container) return;
+            
+            const svgRect = document.getElementById('terrain-svg').getBoundingClientRect();
+            const pX = (x / 100) * svgRect.width;
+            const pY = (y / 400) * svgRect.height;
+            
+            for (let i = 0; i < 4; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'spark-particle';
+                spark.style.left = `${pX + (Math.random() - 0.5) * 16}px`;
+                spark.style.top = `${pY + (Math.random() - 0.5) * 16}px`;
+                container.appendChild(spark);
+                setTimeout(() => spark.remove(), 600);
+            }
+        }
+
+        function computeRIASECFromAnswers() {
+            const presentations = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+            const selections = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+            
+            questionnaireQuestions.forEach((q, idx) => {
+                const answer = userQuestionAnswers[idx];
+                if (typeof answer === 'string') {
+                    // This question was answered, so increment presentations for all traits featured in its options
+                    q.options.forEach(opt => {
+                        presentations[opt.trait]++;
+                    });
+                    // Increment the selected option's trait
+                    selections[answer]++;
+                }
+            });
+            
+            const riasec = {};
+            Object.keys(selections).forEach(trait => {
+                if (presentations[trait] > 0) {
+                    riasec[trait] = parseFloat(((selections[trait] / presentations[trait]) * 10.0).toFixed(1));
+                } else {
+                    riasec[trait] = null; // Skipped / null
+                }
+            });
+            return riasec;
+        }
+
+        function renderTags() {
+            const grid = document.getElementById('tags-grid');
+            grid.innerHTML = '';
+            
+            tagsList.forEach(tag => {
+                const state = tagPreferences[tag.id];
+                let classList = "glass-card p-4 rounded-2xl flex flex-col justify-between items-center text-center cursor-pointer select-none border border-white/5 transition-all duration-200 ";
+                let badge = "";
+
+                if (state === 0) {
+                    classList += "hover:bg-white/5";
+                    badge = `<span class="text-xs text-gray-500 mt-2 flex items-center space-x-1"><span>Neutral</span></span>`;
+                } else if (state === 1) {
+                    classList += "bg-emerald-500/10 border-emerald-500/35 hover:bg-emerald-500/15 text-emerald-300";
+                    badge = `<span class="text-xs text-emerald-400 mt-2 font-bold flex items-center space-x-1">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>Liked</span>
+                    </span>`;
+                } else {
+                    classList += "bg-rose-500/10 border-rose-500/35 hover:bg-rose-500/15 text-rose-300";
+                    badge = `<span class="text-xs text-rose-400 mt-2 font-bold flex items-center space-x-1">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                        <span>Disliked</span>
+                    </span>`;
+                }
+
+                const card = document.createElement('div');
+                card.className = classList;
+                card.innerHTML = `
+                    <span class="text-sm font-semibold tracking-wide">${tag.label}</span>
+                    ${badge}
+                `;
+                
+                card.onclick = () => {
+                    tagPreferences[tag.id] = (tagPreferences[tag.id] + 1) % 3;
+                    renderTags();
+                };
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Submit intake flow intercepts and shows Transparency confirmation modal
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('transparency-modal').classList.remove('hidden');
+        }
+
+        function resolveTransparency(honest) {
+            document.getElementById('transparency-modal').classList.add('hidden');
+            document.getElementById('intake-container').classList.add('hidden');
+            
+            const loader = document.getElementById('loader-container');
+            loader.classList.remove('hidden');
+
+            const messages = [
+                "Evaluating situational responses...",
+                "Cross-referencing self-perception metrics...",
+                "Running similarity algorithms...",
+                "Signal calibration sequence active..."
+            ];
+            let msgIdx = 0;
+            const msgTimer = setInterval(() => {
+                msgIdx = (msgIdx + 1) % messages.length;
+                document.getElementById('loader-message').innerText = messages[msgIdx];
+            }, 800);
+
+            const formData = new FormData(document.getElementById('intake-form'));
+            const computedRiasec = computeRIASECFromAnswers();
+            
+            const payload = {
+                riasec: computedRiasec,
+                self_judgement: {
+                    creativity: formData.get('self_creativity'),
+                    analytical: formData.get('self_analytical'),
+                    social: formData.get('self_social')
+                },
+                transparency: honest,
+                likes: Object.keys(tagPreferences).filter(t => tagPreferences[t] === 1),
+                dislikes: Object.keys(tagPreferences).filter(t => tagPreferences[t] === 2),
+                intent: formData.get('intent'),
+                current_role: formData.get('current_role'),
+                driver: formData.get('driver'),
+                financial_flexibility: formData.get('financial_flexibility')
+            };
+
+            fetch('/api/match', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                setTimeout(() => {
+                    clearInterval(msgTimer);
+                    loader.classList.add('hidden');
+                    if (data.success && data.results.length > 0) {
+                        allResults = data.results;
+                        visibleResultsCount = 5;
+                        
+                        window.appAlignmentScore = data.alignment_percentage;
+                        window.appTransparency = data.transparency;
+                        
+                        renderResultsPage();
+                    } else {
+                        renderEmptyState();
+                    }
+                }, 2000);
+            })
+            .catch(err => {
+                clearInterval(msgTimer);
+                loader.classList.add('hidden');
+                alert("An error occurred during matching. Check the console for details.");
+                console.error(err);
+            });
+        }
+
+        function reIntakeHonest() {
+            document.getElementById('blurry-nudge-toast').classList.add('hidden');
+            document.body.classList.remove('blurry-path-active');
+            
+            document.getElementById('results-container').classList.add('hidden');
+            document.getElementById('path-detail-container').classList.add('hidden');
+            document.getElementById('intake-container').classList.remove('hidden');
+            
+            currentStep = 1;
+            updateStepUI();
+        }
+
+        // Render Results dashboard cards
+        function renderResultsPage() {
+            const container = document.getElementById('results-container');
+            const grid = document.getElementById('matches-grid');
+            grid.innerHTML = '';
+            
+            // Populate Phase 2 alignment indicators
+            const alignmentPct = window.appAlignmentScore || 0;
+            const honest = window.appTransparency;
+            
+            document.getElementById('alignment-pct-badge').innerText = `${alignmentPct}%`;
+            
+            const badge = document.getElementById('signal-integrity-badge');
+            const label = document.getElementById('signal-integrity-label');
+            const explanation = document.getElementById('alignment-explanation-text');
+            const alignmentContainer = document.getElementById('alignment-score-container');
+            
+            if (honest === true) {
+                document.body.classList.remove('blurry-path-active');
+                document.getElementById('blurry-nudge-toast').classList.add('hidden');
+                
+                alignmentContainer.className = "calibration-banner flex flex-col md:flex-row justify-between items-start md:items-center gap-6 p-6 rounded-3xl relative overflow-hidden transition-all duration-500";
+                badge.className = "px-4 py-2 rounded-xl text-[10px] font-extrabold flex items-center space-x-2 border border-emerald-500/35 bg-emerald-500/10 text-emerald-300 transition-all duration-500";
+                badge.querySelector('span').className = "w-2 h-2 rounded-full bg-emerald-400 animate-pulse";
+                label.innerText = "Path Calibrated: 100% Signal Integrity";
+                explanation.innerText = "This profile has been compiled under verified conditions. Your self-perception maps to your situational choices with high accuracy.";
+            } else {
+                document.body.classList.add('blurry-path-active');
+                document.getElementById('blurry-nudge-toast').classList.remove('hidden');
+                
+                alignmentContainer.className = "flex flex-col md:flex-row justify-between items-start md:items-center gap-6 p-6 rounded-3xl glass-panel border border-rose-500/20 bg-rose-500/5 relative overflow-hidden transition-all duration-500";
+                badge.className = "px-4 py-2 rounded-xl text-[10px] font-extrabold flex items-center space-x-2 border border-rose-500/35 bg-rose-500/10 text-rose-300 transition-all duration-500";
+                badge.querySelector('span').className = "w-2 h-2 rounded-full bg-rose-400 animate-pulse";
+                label.innerText = "Speculative Path (Unverified Integrity)";
+                explanation.innerText = "This profile contains unverified situational integrity. Career options and pathways remain visually blurred until verified.";
+            }
+            
+            const resultsToShow = allResults.slice(0, visibleResultsCount);
+            
+            resultsToShow.forEach((match, index) => {
+                let ringColor = "stroke-brand-500";
+                let badgeColor = "bg-brand-500/10 text-brand-300 border-brand-500/20";
+                let rankLabel = `${index + 1}st Match`;
+                
+                if (index === 1) {
+                    ringColor = "stroke-indigo-400";
+                    badgeColor = "bg-indigo-500/10 text-indigo-300 border-indigo-500/20";
+                    rankLabel = "2nd Match";
+                } else if (index === 2) {
+                    ringColor = "stroke-pink-400";
+                    badgeColor = "bg-pink-500/10 text-pink-300 border-pink-500/20";
+                    rankLabel = "3rd Match";
+                } else if (index >= 3) {
+                    ringColor = "stroke-slate-400";
+                    badgeColor = "bg-slate-500/10 text-slate-300 border-slate-500/20";
+                    rankLabel = `${index + 1}th Recommendation`;
+                }
+
+                const circleRadius = 38;
+                const circumference = 2 * Math.PI * circleRadius;
+                const strokeDashoffset = circumference - (match.score / 100) * circumference;
+
+                const cardHtml = `
+                    <div class="glass-panel border border-white/5 rounded-3xl p-6 relative flex flex-col md:flex-row gap-6 items-center md:items-start transition duration-300 hover:border-white/10 group animate-fade-in">
+                        
+                        <!-- Circular Match Meter -->
+                        <div class="relative w-28 h-28 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-full h-full transform -rotate-90 gauge-svg" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="${circleRadius}" fill="transparent" stroke="rgba(255,255,255,0.05)" stroke-width="8"></circle>
+                                <circle cx="50" cy="50" r="${circleRadius}" fill="transparent" class="${ringColor}" stroke-width="8"
+                                    stroke-dasharray="${circumference}" stroke-dashoffset="${strokeDashoffset}" stroke-linecap="round"></circle>
+                            </svg>
+                            <div class="absolute text-center">
+                                <span class="text-xl font-black text-white">${Math.round(match.score)}%</span>
+                                <span class="block text-[8px] text-gray-400 font-bold uppercase tracking-wider">Match</span>
+                            </div>
+                        </div>
+
+                        <!-- Match Information -->
+                        <div class="flex-grow space-y-4 text-center md:text-left w-full">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-2">
+                                <div class="flex flex-col md:flex-row items-center md:items-start gap-2">
+                                    <h3 class="text-2xl font-bold text-white tracking-tight">${match.name}</h3>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${badgeColor}">
+                                        ${rankLabel}
+                                    </span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3 text-xs">
+                                    <span class="text-gray-400">Salary: <strong class="text-emerald-400 font-bold">${match.salary}</strong></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+                                    <span class="text-gray-400">Growth: <strong class="text-indigo-400 font-bold">${match.growth}</strong></span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-sm text-gray-300 leading-relaxed">${match.description}</p>
+                            
+                            <div class="bg-white/5 border border-white/5 rounded-2xl p-4 text-xs text-gray-400 space-y-2 relative">
+                                <div class="font-bold text-[10px] uppercase text-brand-400 tracking-wider flex items-center space-x-1.5">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>Why you match</span>
+                                </div>
+                                <p class="leading-relaxed font-medium">${match.explanation}</p>
+                            </div>
+
+                            <!-- Phase 2 Action Button to expand detailed roadmap -->
+                            <div class="flex justify-end pt-2">
+                                <button onclick="expandCareerPath('${match.id}')" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-white transition flex items-center space-x-2 shadow-lg shadow-brand-600/10">
+                                    <span>Explore Stepping Stones</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                grid.insertAdjacentHTML('beforeend', cardHtml);
+            });
+
+            const showMoreContainer = document.getElementById('show-more-container');
+            if (visibleResultsCount < allResults.length) {
+                showMoreContainer.classList.remove('hidden');
+            } else {
+                showMoreContainer.classList.add('hidden');
+            }
+
+            container.classList.remove('hidden');
+        }
+
+        function showMoreResults() {
+            visibleResultsCount += 5;
+            renderResultsPage();
+        }
+
+        // Expanded Roadmap Operations (Phase 2)
+        function expandCareerPath(careerId) {
+            // Find career object
+            activeCareer = allResults.find(c => c.id === careerId);
+            if (!activeCareer) return;
+
+            // Initialize progress array for this career if not present
+            if (!userProgress[activeCareer.id]) {
+                userProgress[activeCareer.id] = [];
+            }
+
+            // Populate text elements in Detail view
+            document.getElementById('detail-career-name').innerText = activeCareer.name;
+            document.getElementById('detail-career-desc').innerText = activeCareer.description;
+
+            // Badges
+            const badgesDiv = document.getElementById('detail-market-badges');
+            badgesDiv.innerHTML = `
+                <span class="text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20 font-bold">Salary: ${activeCareer.salary}</span>
+                <span class="text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20 font-bold mt-1 text-right">Growth: ${activeCareer.growth}</span>
+            `;
+
+            // Reset pace toggle to Part-Time default
+            activePace = 'part';
+            updatePaceToggleUI();
+            updatePaceMetrics();
+
+            // Render stepping stone list
+            renderSteppingStones();
+
+            // Transition layouts
+            document.getElementById('results-container').classList.add('hidden');
+            document.getElementById('path-detail-container').classList.remove('hidden');
+            
+            // Scroll to detail top
+            document.getElementById('path-detail-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function backToMatches() {
+            document.getElementById('path-detail-container').classList.add('hidden');
+            document.getElementById('results-container').classList.remove('hidden');
+            
+            document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle part-time/full-time speed
+        function setPace(pace) {
+            activePace = pace;
+            updatePaceToggleUI();
+            updatePaceMetrics();
+        }
+
+        function updatePaceToggleUI() {
+            const btnPart = document.getElementById('btn-pace-part');
+            const btnFull = document.getElementById('btn-pace-full');
+
+            if (activePace === 'part') {
+                btnPart.className = "flex-1 py-2 text-xs font-bold text-white rounded-xl transition duration-300 bg-brand-600 shadow-md";
+                btnFull.className = "flex-1 py-2 text-xs font-bold text-gray-400 rounded-xl transition duration-300";
+            } else {
+                btnPart.className = "flex-1 py-2 text-xs font-bold text-gray-400 rounded-xl transition duration-300";
+                btnFull.className = "flex-1 py-2 text-xs font-bold text-white rounded-xl transition duration-300 bg-brand-600 shadow-md";
+            }
+        }
+
+        function updatePaceMetrics() {
+            const statHours = document.getElementById('stat-weekly-hours');
+            const statDuration = document.getElementById('stat-duration');
+            const statDesc = document.getElementById('stat-pace-desc');
+
+            // Duration heuristics in weeks based on career
+            let standardWeeks = 12;
+            if (activeCareer.id.includes('engineer') || activeCareer.id.includes('specialist') || activeCareer.id.includes('developer')) {
+                standardWeeks = 16;
+            } else if (activeCareer.id.includes('analyst') || activeCareer.id.includes('manager')) {
+                standardWeeks = 10;
+            }
+
+            if (activePace === 'part') {
+                statHours.innerText = "8-10 hrs/wk";
+                statDuration.innerText = `${Math.round(standardWeeks * 2.5)} Weeks`;
+                statDesc.innerText = "Slow & steady exploration, designed for a side-hustle pace alongside current commitments";
+            } else {
+                statHours.innerText = "35-40 hrs/wk";
+                statDuration.innerText = `${standardWeeks} Weeks`;
+                statDesc.innerText = "Accelerated, intensive pivot designed to enter the field as quickly as possible";
+            }
+        }
+
+        // Render Milestone Timeline list
+        function renderSteppingStones() {
+            const listGrid = document.getElementById('detail-timeline-grid');
+            listGrid.innerHTML = '';
+
+            const milestones = activeCareer.milestones || [];
+            const completedList = userProgress[activeCareer.id] || [];
+
+            // Calculate progress percent
+            const completedCount = completedList.length;
+            const totalCount = milestones.length;
+            const progressPercent = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
+            
+            document.getElementById('detail-progress-percent').innerText = `${Math.round(progressPercent)}% Completed`;
+            document.getElementById('detail-progress-bar').style.width = `${progressPercent}%`;
+
+            milestones.forEach((milestone, idx) => {
+                const isCompleted = completedList.includes(milestone.id);
+                
+                // An item is unlocked if it's the first milestone OR the previous milestone is completed
+                const isUnlocked = idx === 0 || completedList.includes(milestones[idx - 1].id);
+
+                let itemClass = "relative pl-8 pb-8 transition-all duration-300 ";
+                let indicatorClass = "absolute left-[-29px] top-1.5 w-6 h-6 rounded-full border-2 flex items-center justify-center font-bold text-xs transition-all ";
+                let buttonHtml = "";
+
+                if (isCompleted) {
+                    itemClass += "opacity-100";
+                    indicatorClass += "bg-emerald-500 border-emerald-500 text-white";
+                    buttonHtml = `
+                        <div class="flex items-center space-x-2 text-xs font-bold text-emerald-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Milestone Completed</span>
+                        </div>
+                    `;
+                } else if (isUnlocked) {
+                    itemClass += "opacity-100";
+                    indicatorClass += "bg-brand-600 border-brand-500 text-white shadow-lg shadow-brand-500/25";
+                    buttonHtml = `
+                        <div class="flex flex-wrap gap-3">
+                            <a href="${milestone.resource_url}" target="_blank" class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-xs font-semibold text-white transition flex items-center space-x-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4 1.253v13C19.332 18.477 17.747 18 16.5 18c-1.746 0-3.332.477-4 1.253"></path>
+                                </svg>
+                                <span>${milestone.resource_label || "Explore Resource"}</span>
+                            </a>
+                            <button onclick="triggerQuiz(${milestone.id})" class="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-xs font-bold text-white transition flex items-center space-x-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                                </svg>
+                                <span>Quick Milestone Test</span>
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    itemClass += "opacity-40 select-none pointer-events-none";
+                    indicatorClass += "bg-gray-900 border-white/10 text-gray-500";
+                    buttonHtml = `
+                        <span class="text-xs text-gray-500 italic">Locked (Complete previous steps to unlock)</span>
+                    `;
+                }
+
+                const indicatorVal = isCompleted ? `✓` : `${milestone.id}`;
+
+                const stoneHtml = `
+                    <div class="${itemClass}">
+                        <div class="${indicatorClass}">${indicatorVal}</div>
+                        <div class="space-y-2">
+                            <h4 class="text-lg font-bold text-white tracking-tight">${milestone.title}</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed max-w-xl">${milestone.description}</p>
+                            <div class="pt-2">${buttonHtml}</div>
+                        </div>
+                    </div>
+                `;
+                listGrid.insertAdjacentHTML('beforeend', stoneHtml);
+            });
+        }
+
+        // Trigger Interactive Quiz Modal
+        function triggerQuiz(milestoneId) {
+            const milestones = activeCareer.milestones || [];
+            activeMilestone = milestones.find(m => m.id === milestoneId);
+            if (!activeMilestone) return;
+
+            document.getElementById('quiz-milestone-title').innerText = activeMilestone.title;
+
+            // Reset form status and buttons
+            document.getElementById('quiz-status-alert').className = "hidden text-xs font-semibold p-4 rounded-xl text-center";
+            document.getElementById('quiz-submit-btn').classList.remove('hidden');
+            document.getElementById('quiz-unlock-btn').classList.add('hidden');
+
+            const container = document.getElementById('quiz-questions-container');
+            container.innerHTML = '';
+
+            const quiz = activeMilestone.quiz || { questions: [] };
+            quiz.questions.forEach((q, qIdx) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = "space-y-3 border-b border-white/5 pb-4 last:border-b-0";
+                
+                let optionsHtml = '';
+                q.options.forEach((opt, optIdx) => {
+                    optionsHtml += `
+                        <label class="flex items-center space-x-3 bg-white/5 border border-white/5 rounded-xl p-3.5 cursor-pointer hover:bg-white/10 transition text-xs font-semibold text-gray-300">
+                            <input type="radio" name="question_${qIdx}" value="${optIdx}" required class="w-4 h-4 text-brand-600 focus:ring-brand-500 border-white/10 bg-transparent">
+                            <span>${opt}</span>
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <p class="text-sm font-bold text-white">${qIdx + 1}. ${q.question}</p>
+                    <div class="grid grid-cols-1 gap-2 mt-2">${optionsHtml}</div>
+                    <div id="explanation_${qIdx}" class="hidden text-xs text-brand-300 bg-brand-500/10 p-3 rounded-lg border border-brand-500/20 leading-relaxed">
+                        <strong>Explanation:</strong> ${q.explanation}
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+
+            // Show Modal
+            const modal = document.getElementById('quiz-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quiz-modal').classList.add('hidden');
+        }
+
+        // Check quiz submissions
+        function submitQuiz(event) {
+            event.preventDefault();
+            
+            const questions = activeMilestone.quiz.questions;
+            let correctCount = 0;
+
+            questions.forEach((q, qIdx) => {
+                const selectedVal = document.querySelector(`input[name="question_${qIdx}"]:checked`).value;
+                const selectedInt = parseInt(selectedVal);
+                
+                // Show explanations
+                const expDiv = document.getElementById(`explanation_${qIdx}`);
+                expDiv.classList.remove('hidden');
+
+                if (selectedInt === q.answer) {
+                    correctCount++;
+                }
+            });
+
+            const alertBox = document.getElementById('quiz-status-alert');
+            alertBox.classList.remove('hidden');
+
+            if (correctCount === questions.length) {
+                alertBox.className = "text-xs font-semibold p-4 rounded-xl text-center bg-emerald-500/10 text-emerald-300 border border-emerald-500/20";
+                alertBox.innerHTML = `<strong>Checkpoint Cleared!</strong> All answers are correct. Click below to unlock the next step.`;
+                
+                // Swap buttons
+                document.getElementById('quiz-submit-btn').classList.add('hidden');
+                document.getElementById('quiz-unlock-btn').classList.remove('hidden');
+            } else {
+                alertBox.className = "text-xs font-semibold p-4 rounded-xl text-center bg-rose-500/10 text-rose-300 border border-rose-500/20";
+                alertBox.innerHTML = `<strong>Validation Failed.</strong> Some answers are incorrect. Review the explanations and try again.`;
+            }
+        }
+
+        // Successfully passed quiz, add to progress list and re-render
+        function confirmQuizSuccess() {
+            const completedList = userProgress[activeCareer.id];
+            if (!completedList.includes(activeMilestone.id)) {
+                completedList.push(activeMilestone.id);
+            }
+            
+            closeQuizModal();
+            renderSteppingStones();
+        }
+
+        // Empty state when matches are filtered out
+        function renderEmptyState() {
+            const container = document.getElementById('results-container');
+            const grid = document.getElementById('matches-grid');
+            grid.innerHTML = `
+                <div class="glass-panel border border-white/5 rounded-3xl p-12 text-center space-y-4">
+                    <div class="w-16 h-16 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center mx-auto border border-rose-500/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">No Career Recommendations Found</h3>
+                    <p class="text-sm text-gray-400 max-w-md mx-auto">
+                        Your high number of Disliked tags or restrictive budget settings filtered out all options. Try enabling more tags or changing constraints.
+                    </p>
+                </div>
+            `;
+            document.getElementById('show-more-container').classList.add('hidden');
+            container.classList.remove('hidden');
+        }
+
+        // Reset and clear state
+        function resetApp() {
+            currentStep = 1;
+            Object.keys(tagPreferences).forEach(tagId => tagPreferences[tagId] = 0);
+            document.getElementById('intake-form').reset();
+            
+            // Clear questionnaire answers and self-judgement values
+            userQuestionAnswers.fill(undefined);
+            currentQuestionIndex = 0;
+            renderQuestion();
+            updateSVGProgress();
+            
+            // Reset Self-Judgement range displays
+            document.getElementById('val-self-creativity').innerText = '5';
+            document.getElementById('val-self-analytical').innerText = '5';
+            document.getElementById('val-self-social').innerText = '5';
+
+            // Remove blur filter from body
+            document.body.classList.remove('blurry-path-active');
+            document.getElementById('blurry-nudge-toast').classList.add('hidden');
+
+            // Default budget radio reset
+            selectFlexibility('Medium');
+
+            document.getElementById('results-container').classList.add('hidden');
+            document.getElementById('path-detail-container').classList.add('hidden');
+            document.getElementById('intake-container').classList.remove('hidden');
+            
+            renderTags();
+            updateStepUI();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTags();
+            updateStepUI();
+            renderQuestion();
+            updateSVGProgress();
+        });
+    </script>
+
+    <!-- Transparency Modal (Phase 2 Authenticity Scan) -->
+    <div id="transparency-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 modal-backdrop"></div>
+        <!-- Modal Content -->
+        <div class="relative w-full max-w-md modal-glass rounded-3xl p-8 border border-white/10 text-center space-y-6 animate-fade-in z-10">
+            <!-- Icon/Pulse -->
+            <div class="relative w-16 h-16 mx-auto flex items-center justify-center">
+                <div class="absolute w-full h-full border border-brand-500/30 rounded-full animate-ping opacity-75"></div>
+                <div class="w-12 h-12 bg-brand-500/10 border border-brand-500/20 rounded-full flex items-center justify-center text-brand-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="space-y-2">
+                <h3 class="text-xl font-extrabold text-white tracking-tight">Pathfinder Authenticity Scan</h3>
+                <p class="text-xs text-gray-400 leading-relaxed px-2">
+                    Did you answer all situational scenarios and self-judgements with complete honesty and transparency?
+                </p>
+            </div>
+            
+            <!-- Actions -->
+            <div class="flex flex-col gap-2 pt-2">
+                <button onclick="resolveTransparency(true)" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Yes, calibrate with 100% Signal Integrity</span>
+                </button>
+                <button onclick="resolveTransparency(false)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-gray-300 font-semibold text-xs transition-all">
+                    No, keep path speculative/unfiltered
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Toast Nudge Panel (Phase 2 Blurry Path Toast) -->
+    <div id="blurry-nudge-toast" class="fixed bottom-6 right-6 z-40 hidden max-w-sm nudge-widget rounded-2xl p-4 border flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center flex-shrink-0 mt-0.5 animate-bounce">
+            <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+        </div>
+        <div class="flex-grow">
+            <button onclick="reIntakeHonest()" class="text-left text-[11px] text-gray-300 hover:text-white transition-all font-medium leading-relaxed">
+                To clear the mud and attain sharper results, let's make sure the path is clearer. Click here to refine answers.
+            </button>
+        </div>
+        <button onclick="document.getElementById('blurry-nudge-toast').classList.add('hidden')" class="text-gray-500 hover:text-white transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+</body>
+</html>
