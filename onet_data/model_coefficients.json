@@ -1,5 +1,9 @@
 {
-  "intercept": -7.579615670213237,
-  "coef_riasec_similarity": 0.06983182029762806,
-  "coef_tag_overlap": 0.3397150004224169
+  "intercept": -3.0688670522052175,
+  "coef_riasec_similarity": 0.7421567743494966,
+  "coef_tag_overlap": 0.3973556514838699,
+  "mean_riasec_similarity": 61.17716189856999,
+  "mean_tag_overlap": 0.6980656697009102,
+  "std_riasec_similarity": 10.646227567732192,
+  "std_tag_overlap": 1.170568378433066
 }

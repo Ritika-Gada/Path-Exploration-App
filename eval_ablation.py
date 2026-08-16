@@ -133,6 +133,10 @@ def run_model_comparison_eval():
         intercept = coefs["intercept"]
         coef_riasec = coefs["coef_riasec_similarity"]
         coef_tag = coefs["coef_tag_overlap"]
+        mean_riasec = coefs["mean_riasec_similarity"]
+        mean_tag = coefs["mean_tag_overlap"]
+        std_riasec = coefs["std_riasec_similarity"]
+        std_tag = coefs["std_tag_overlap"]
     except Exception as e:
         print(f"Error loading model coefficients: {e}")
         return
@@ -149,6 +153,10 @@ def run_model_comparison_eval():
     heuristic_top10_hits = 0
     model_top5_hits = 0
     model_top10_hits = 0
+    
+    # Store binary correctness arrays for McNemar's paired test
+    h_top5_correct = []
+    m_top5_correct = []
     
     all_socs = list(onet_db.keys())
     
@@ -172,8 +180,10 @@ def run_model_comparison_eval():
             h_score = riasec_sim + (4.0 * tag_overlap)
             heuristic_scores.append((soc, h_score))
             
-            # ML Model score calculation (logistic probability rescaled to 0-100)
-            logit = intercept + (coef_riasec * riasec_sim) + (coef_tag * tag_overlap)
+            # Z-standardized ML Model score calculation (logistic probability rescaled to 0-100)
+            riasec_sim_scaled = (riasec_sim - mean_riasec) / std_riasec
+            tag_overlap_scaled = (tag_overlap - mean_tag) / std_tag
+            logit = intercept + (coef_riasec * riasec_sim_scaled) + (coef_tag * tag_overlap_scaled)
             prob = 1.0 / (1.0 + math.exp(-logit))
             m_score = prob * 100.0
             model_scores.append((soc, m_score))
@@ -184,12 +194,17 @@ def run_model_comparison_eval():
         heuristic_ranks = [x[0] for x in heuristic_scores]
         model_ranks = [x[0] for x in model_scores]
         
-        if target_soc in heuristic_ranks[:5]:
+        h_hit_top5 = target_soc in heuristic_ranks[:5]
+        m_hit_top5 = target_soc in model_ranks[:5]
+        h_top5_correct.append(h_hit_top5)
+        m_top5_correct.append(m_hit_top5)
+        
+        if h_hit_top5:
             heuristic_top5_hits += 1
         if target_soc in heuristic_ranks[:10]:
             heuristic_top10_hits += 1
             
-        if target_soc in model_ranks[:5]:
+        if m_hit_top5:
             model_top5_hits += 1
         if target_soc in model_ranks[:10]:
             model_top10_hits += 1
@@ -200,11 +215,50 @@ def run_model_comparison_eval():
     model_top5_acc = (model_top5_hits / total_test) * 100.0
     model_top10_acc = (model_top10_hits / total_test) * 100.0
     
+    # Calculate McNemar Contingency Table
+    both_correct = 0
+    model_only = 0
+    heuristic_only = 0
+    both_incorrect = 0
+    
+    for h_correct, m_correct in zip(h_top5_correct, m_top5_correct):
+        if h_correct and m_correct:
+            both_correct += 1
+        elif not h_correct and m_correct:
+            model_only += 1      # cell b
+        elif h_correct and not m_correct:
+            heuristic_only += 1  # cell c
+        else:
+            both_incorrect += 1
+            
+    # Calculate McNemar exact binomial p-value (since b + c is small)
+    n_disagreements = model_only + heuristic_only
+    p_value = 1.0
+    if n_disagreements > 0:
+        k = min(model_only, heuristic_only)
+        binomial_sum = 0.0
+        for i in range(k + 1):
+            binomial_sum += math.comb(n_disagreements, i) * (0.5 ** n_disagreements)
+        p_value = min(1.0, binomial_sum * 2.0)
+    
     print(f"Test Set Size: {total_test} profiles")
+    print(f"Candidate Pool Size: {len(all_socs)} occupations")
+    print(f"Random Chance (Top-5): {(5.0 / len(all_socs)) * 100.0:.3f}%")
+    print(f"Random Chance (Top-10): {(10.0 / len(all_socs)) * 100.0:.3f}%")
+    print("-" * 90)
     print(f"Metric      | Heuristic Weights | Trained ML Model | Lift")
     print("-" * 90)
     print(f"Top-5 Acc   | {heuristic_top5_acc:16.2f}% | {model_top5_acc:15.2f}% | {model_top5_acc - heuristic_top5_acc:+.2f}%")
     print(f"Top-10 Acc  | {heuristic_top10_acc:16.2f}% | {model_top10_acc:15.2f}% | {model_top10_acc - heuristic_top10_acc:+.2f}%")
+    print("-" * 90)
+    print("Statistical Significance (Top-5 hits):")
+    print(f"  Both Correct: {both_correct} | Both Incorrect: {both_incorrect}")
+    print(f"  Model Correct Only (b): {model_only} | Heuristic Correct Only (c): {heuristic_only}")
+    print(f"  McNemar paired exact p-value: {p_value:.4f}")
+    if p_value < 0.05:
+        print("  Result: The model lift is STATISTICALLY SIGNIFICANT (p < 0.05).")
+    else:
+        print("  Result: The model lift is NOT statistically significant (p >= 0.05).")
     print("=" * 90)
 
 if __name__ == "__main__":
