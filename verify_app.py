@@ -158,6 +158,57 @@ class TestCareerMatchPhase2(unittest.TestCase):
         self.assertLessEqual(data["alignment_percentage"], 100.0)
         print("Success: Backend matching route handles skipped questions (null inputs) safely and computes normalized scores.")
 
+    def test_onet_overrides_and_score_breakdowns(self):
+        # 1. Verify CAREERS_DB has overwritten RIASEC values
+        for career in CAREERS_DB:
+            self.assertIn("original_riasec", career)
+            self.assertIn("onet_soc_code", career)
+            self.assertNotEqual(career["riasec"], career["original_riasec"])
+
+        # 2. Verify score breakdowns in API response
+        payload = {
+            "riasec": {"R": 6, "I": 8, "A": 4, "S": 2, "E": 6, "C": 8},
+            "likes": ["machine-learning", "python"],
+            "dislikes": [],
+            "intent": "Full-time",
+            "current_role": "Student",
+            "driver": "Growth",
+            "financial_flexibility": "Low",
+            "self_judgement": {"creativity": 5, "analytical": 8, "social": 4}
+        }
+        
+        response = self.app.post('/api/match', 
+                                 data=json.dumps(payload),
+                                 content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.data.decode('utf-8'))
+        self.assertTrue(data["success"])
+        self.assertIn("results", data)
+        self.assertIn("secondary_results", data)
+        
+        # Verify component-wise scoring on matched curated results
+        for career in data["results"]:
+            self.assertIn("base_score", career)
+            self.assertIn("tag_bonus", career)
+            self.assertIn("driver_bonus", career)
+            self.assertIn("barrier_adjustment", career)
+            self.assertIn("final_score", career)
+            
+            calculated_sum = career["base_score"] + career["tag_bonus"] + career["driver_bonus"] + career["barrier_adjustment"]
+            clamped_calculated = max(0.0, min(100.0, calculated_sum))
+            self.assertAlmostEqual(career["final_score"], clamped_calculated, places=1)
+            self.assertEqual(career["score"], career["final_score"])
+            
+        # Verify secondary matches logic
+        top_curated_score = data["results"][0]["score"] if data["results"] else 0.0
+        for sr in data["secondary_results"]:
+            self.assertIn("soc_code", sr)
+            self.assertIn("title", sr)
+            self.assertIn("score", sr)
+            self.assertGreater(sr["score"], top_curated_score)
+            
+        print("Success: Real rescaled O*NET interests successfully loaded, score components correctly isolated, and wider secondary pool matched.")
+
 if __name__ == '__main__':
     print("Running Phase 2 app verification tests...")
     unittest.main()

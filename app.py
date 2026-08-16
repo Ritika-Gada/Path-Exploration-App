@@ -2,6 +2,7 @@ import os
 # pyrefly: ignore [missing-import]
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
+from onet_loader import load_onet_data
 
 app = Flask(__name__)
 CORS(app)
@@ -1523,6 +1524,46 @@ CAREERS_DB = [
     }
 ]
 
+CURATED_SOC_MAPPING = {
+    "prompt_engineer": "15-2051.00",
+    "mlops_specialist": "15-1299.08",
+    "ux_ui_designer": "15-1255.00",
+    "growth_marketer": "13-1161.01",
+    "data_analyst": "15-2051.01",
+    "product_manager": "15-1299.09",
+    "devrel_engineer": "15-1252.00",
+    "sustainability_consultant": "13-1199.05",
+    "cybersecurity_analyst": "15-1212.00",
+    "blockchain_developer": "15-1299.07",
+    "ai_ethicist": "15-1221.00",
+    "customer_success_manager": "41-3091.00",
+    "digital_content_strategist": "27-3043.00",
+    "talent_acquisition_partner": "13-1071.00",
+    "agile_scrum_master": "15-1299.09",
+    "fintech_financial_planner": "13-2052.00",
+    "healthcare_informatics_specialist": "15-1211.01",
+    "ecommerce_brand_manager": "11-2021.00",
+}
+
+# Load O*NET database
+try:
+    ONET_DB = load_onet_data()
+except Exception as e:
+    print(f"Warning: Failed to load O*NET data at startup: {e}")
+    ONET_DB = {}
+
+# Override hardcoded RIASEC scores with real O*NET data
+for career in CAREERS_DB:
+    soc_code = CURATED_SOC_MAPPING.get(career["id"])
+    if soc_code and soc_code in ONET_DB:
+        # Keep original RIASEC for testing/validation
+        career["original_riasec"] = career["riasec"].copy()
+        career["riasec"] = ONET_DB[soc_code]["riasec"]
+        career["onet_soc_code"] = soc_code
+        print(f"Overrode {career['name']} with O*NET data {soc_code}: {career['riasec']}")
+    else:
+        print(f"Warning: Could not override {career['name']}, SOC: {soc_code} not found in O*NET DB")
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -1598,17 +1639,16 @@ def match():
             driver_bonus = 10.0
             
         # 6. FINANCIAL FLEXIBILITY AND BARRIER CONSTRAINT ADJUSTMENTS
-        # If user has low budget/financial flexibility, apply penalty to high-barrier roles
         barrier_adjustment = 0.0
         if financial_flexibility == 'Low' and career.get("high_barrier", False):
             barrier_adjustment = -15.0 # -15% penalty
         elif financial_flexibility == 'High' and career.get("high_barrier", False):
-            barrier_adjustment = 5.0 # +5% bonus for high resource capability matching deep paths
+            barrier_adjustment = 5.0 # +5% bonus
             
-        # Boost low-barrier options if low flexibility is chosen for learning/side path
+        # Boost low-barrier options if low flexibility is chosen
         low_flex_boost = 0.0
         if financial_flexibility == 'Low' and not career.get("high_barrier", False) and intent in ['Part-time', 'Hobby']:
-            low_flex_boost = 10.0 # +10% boost for low-barrier hobby exploration
+            low_flex_boost = 10.0 # +10% boost
             
         # Total score calculation
         total_score = base_match_score + bonus_tags + driver_bonus + barrier_adjustment + low_flex_boost
@@ -1616,7 +1656,6 @@ def match():
         total_score = max(0.0, min(100.0, total_score))
         
         # Generate Dynamic explanation
-        # Find dominant matching RIASEC trait
         active_traits = {k: v for k, v in parsed_user_riasec.items() if v is not None}
         if active_traits:
             sorted_user_traits = sorted(active_traits.items(), key=lambda x: x[1], reverse=True)
@@ -1665,6 +1704,11 @@ def match():
             "id": career["id"],
             "name": career["name"],
             "score": round(total_score, 1),
+            "base_score": round(base_match_score, 1),
+            "tag_bonus": round(bonus_tags, 1),
+            "driver_bonus": round(driver_bonus, 1),
+            "barrier_adjustment": round(barrier_adjustment + low_flex_boost, 1),
+            "final_score": round(total_score, 1),
             "explanation": explanation,
             "salary": f"${career['salary']:,}",
             "growth": career["growth"],
@@ -1676,6 +1720,46 @@ def match():
         
     # Sort matches by score descending
     matched_careers.sort(key=lambda x: x["score"], reverse=True)
+    
+    # 7. MATCH THE WIDER O*NET POOL
+    top_curated_score = matched_careers[0]["score"] if matched_careers else 0.0
+    secondary_results = []
+    
+    # Set of already matched SOC codes to avoid duplicate recommendations
+    curated_soc_codes = set(CURATED_SOC_MAPPING.values())
+    
+    for soc_code, onet_career in ONET_DB.items():
+        if soc_code in curated_soc_codes:
+            continue
+            
+        # Calculate O*NET occupation RIASEC base match score
+        total_dist = 0
+        career_riasec = onet_career["riasec"]
+        valid_dims = 0
+        for dim in dimensions:
+            u_val = parsed_user_riasec.get(dim)
+            if u_val is not None:
+                c_val = career_riasec.get(dim, 5.0)
+                total_dist += abs(c_val - u_val)
+                valid_dims += 1
+                
+        if valid_dims > 0:
+            riasec_score = 1.0 - (total_dist / (valid_dims * 10.0))
+        else:
+            riasec_score = 1.0
+        onet_base_score = riasec_score * 100.0
+        
+        # If this occupation scores strictly higher than the top curated career
+        if onet_base_score > top_curated_score:
+            secondary_results.append({
+                "soc_code": soc_code,
+                "title": onet_career["title"],
+                "score": round(onet_base_score, 1)
+            })
+            
+    # Sort and take top 5 secondary results
+    secondary_results.sort(key=lambda x: x["score"], reverse=True)
+    secondary_results = secondary_results[:5]
     
     # Extract self-judgement and transparency data for Phase 2 metrics
     self_judgement = data.get('self_judgement', {})
@@ -1707,10 +1791,13 @@ def match():
     return jsonify({
         "success": True,
         "results": matched_careers,
+        "secondary_results": secondary_results,
         "alignment_percentage": alignment_pct,
         "transparency": transparency,
         "total_evaluated": len(CAREERS_DB)
     })
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5001, debug=True)
+    # Bind to port specified by PORT env var for Render compatibility
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host='0.0.0.0', port=port, debug=True)

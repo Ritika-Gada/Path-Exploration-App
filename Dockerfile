@@ -8,6 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY app.py .
+COPY onet_loader.py .
+COPY onet_data/ ./onet_data/
 COPY static/ ./static/
 COPY templates/ ./templates/
 

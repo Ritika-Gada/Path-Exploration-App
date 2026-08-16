@@ -38,3 +38,12 @@ venv.bak/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# HF Static Deploy Temp folder
+hf_deploy/
+
+# O*NET Zip File and other data files
+onet_data/*.zip
+onet_data/db_30_3_text/*
+!onet_data/db_30_3_text/Career Interest Types.txt
+!onet_data/db_30_3_text/Occupation Data.txt
