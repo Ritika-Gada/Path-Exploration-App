@@ -1,4 +1,6 @@
 import os
+import math
+import json
 # pyrefly: ignore [missing-import]
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
@@ -1552,6 +1554,14 @@ except Exception as e:
     print(f"Warning: Failed to load O*NET data at startup: {e}")
     ONET_DB = {}
 
+# Load ML model coefficients for standardized scoring
+try:
+    with open("onet_data/model_coefficients.json", "r") as f:
+        COEFS = json.load(f)
+except Exception as e:
+    print(f"Warning: Failed to load ML model coefficients at startup: {e}")
+    COEFS = None
+
 # Override hardcoded RIASEC scores with real O*NET data
 for career in CAREERS_DB:
     soc_code = CURATED_SOC_MAPPING.get(career["id"])
@@ -1623,16 +1633,35 @@ def match():
             riasec_score = 1.0 - (total_dist / (valid_dims * 10.0))
         else:
             riasec_score = 1.0
-        base_match_score = riasec_score * 100.0
+        riasec_similarity = riasec_score * 100.0
         
-        # 4. TAG BONUSES (likes)
-        bonus_tags = 0
+        # Compute tag overlap count
+        tag_overlap = 0.0
         matching_tags = []
         for tag in likes:
             if tag in career["tags"]:
-                bonus_tags += 4.0
+                tag_overlap += 1.0
                 matching_tags.append(tag)
                 
+        # 4. ML MODEL BASE MATCH SCORE (probability scaled to 0-100)
+        if COEFS:
+            # Z-standardize features before prediction
+            mean_riasec = COEFS["mean_riasec_similarity"]
+            std_riasec = COEFS["std_riasec_similarity"]
+            mean_tag = COEFS["mean_tag_overlap"]
+            std_tag = COEFS["std_tag_overlap"]
+            
+            riasec_sim_scaled = (riasec_similarity - mean_riasec) / std_riasec
+            tag_overlap_scaled = (tag_overlap - mean_tag) / std_tag
+            
+            # Correct for training class imbalance (15:1 negative sampling) by adjusting intercept
+            logit = COEFS["intercept"] + math.log(15.0) + (COEFS["coef_riasec_similarity"] * riasec_sim_scaled) + (COEFS["coef_tag_overlap"] * tag_overlap_scaled)
+            probability = 1.0 / (1.0 + math.exp(-logit))
+            base_match_score = probability * 100.0
+        else:
+            # Fallback to unstandardized similarity
+            base_match_score = riasec_similarity
+            
         # 5. PRIMARY DRIVER MATCH
         driver_bonus = 0.0
         if driver == career["driver"]:
@@ -1650,8 +1679,10 @@ def match():
         if financial_flexibility == 'Low' and not career.get("high_barrier", False) and intent in ['Part-time', 'Hobby']:
             low_flex_boost = 10.0 # +10% boost
             
-        # Total score calculation
-        total_score = base_match_score + bonus_tags + driver_bonus + barrier_adjustment + low_flex_boost
+        # Total score calculation: model-derived base score + driver bonus + barrier adjustments
+        # Note: Standalone tag_bonus is 0.0 because tags are now inside the trained model's base score
+        tag_bonus_val = 0.0
+        total_score = base_match_score + driver_bonus + barrier_adjustment + low_flex_boost
         # Clamp between 0 and 100
         total_score = max(0.0, min(100.0, total_score))
         
@@ -1705,7 +1736,7 @@ def match():
             "name": career["name"],
             "score": round(total_score, 1),
             "base_score": round(base_match_score, 1),
-            "tag_bonus": round(bonus_tags, 1),
+            "tag_bonus": round(tag_bonus_val, 1),
             "driver_bonus": round(driver_bonus, 1),
             "barrier_adjustment": round(barrier_adjustment + low_flex_boost, 1),
             "final_score": round(total_score, 1),
@@ -1747,7 +1778,27 @@ def match():
             riasec_score = 1.0 - (total_dist / (valid_dims * 10.0))
         else:
             riasec_score = 1.0
-        onet_base_score = riasec_score * 100.0
+        riasec_similarity = riasec_score * 100.0
+        
+        # Wider pool occupations have no tags, so tag overlap = 0.0
+        tag_overlap = 0.0
+        
+        if COEFS:
+            # Z-standardize features
+            mean_riasec = COEFS["mean_riasec_similarity"]
+            std_riasec = COEFS["std_riasec_similarity"]
+            mean_tag = COEFS["mean_tag_overlap"]
+            std_tag = COEFS["std_tag_overlap"]
+            
+            riasec_sim_scaled = (riasec_similarity - mean_riasec) / std_riasec
+            tag_overlap_scaled = (tag_overlap - mean_tag) / std_tag
+            
+            # Correct for training class imbalance (15:1 negative sampling) by adjusting intercept
+            logit = COEFS["intercept"] + math.log(15.0) + (COEFS["coef_riasec_similarity"] * riasec_sim_scaled) + (COEFS["coef_tag_overlap"] * tag_overlap_scaled)
+            probability = 1.0 / (1.0 + math.exp(-logit))
+            onet_base_score = probability * 100.0
+        else:
+            onet_base_score = riasec_similarity
         
         # If this occupation scores strictly higher than the top curated career
         if onet_base_score > top_curated_score:

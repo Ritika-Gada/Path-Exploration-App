@@ -10,9 +10,10 @@ class TestCareerMatchPhase2(unittest.TestCase):
 
     def test_financial_constraints(self):
         # High barrier roles (like MLOps) should get penalized when financial flexibility is Low
+        # We use a profile close to MLOps Specialist to prevent base match score from clamping to 0
         payload_low = {
-            "riasec": {"R": 9, "I": 9, "A": 9, "S": 9, "E": 9, "C": 9},
-            "likes": [],
+            "riasec": {"R": 6.0, "I": 9.0, "A": 3.0, "S": 3.0, "E": 5.0, "C": 8.0},
+            "likes": ["coding"],
             "dislikes": [],
             "intent": "Full-time",
             "current_role": "Student",
@@ -41,6 +42,49 @@ class TestCareerMatchPhase2(unittest.TestCase):
         # Penalty is -15% for Low, bonus is +5% for High -> diff should be exactly 20.0
         self.assertEqual(round(mlops_high["score"] - mlops_low["score"], 1), 20.0)
         print("Success: Low financial flexibility correctly penalizes high-barrier roles.")
+
+    def test_model_matching_math(self):
+        # Verify that match route uses the exact logistic regression model from json coefficients
+        with open("onet_data/model_coefficients.json", "r") as f:
+            coefs = json.load(f)
+        
+        payload = {
+            "riasec": {"R": 6.0, "I": 9.0, "A": 3.0, "S": 3.0, "E": 5.0, "C": 8.0},
+            "likes": ["coding"],
+            "dislikes": [],
+            "intent": "Full-time",
+            "current_role": "Student",
+            "driver": "Money",
+            "financial_flexibility": "High"
+        }
+        
+        response = self.app.post('/api/match', 
+                                 data=json.dumps(payload),
+                                 content_type='application/json')
+        data = json.loads(response.data.decode('utf-8'))
+        mlops = next(c for c in data["results"] if c["id"] == "mlops_specialist")
+        
+        # Calculate expected score manually using the same math
+        import math
+        total_dist = 0.0
+        # MLOps O*NET RIASEC values
+        target_riasec = mlops["riasec"]
+        for dim in ["R", "I", "A", "S", "E", "C"]:
+            total_dist += abs(payload["riasec"][dim] - target_riasec[dim])
+        riasec_similarity = (1.0 - (total_dist / 60.0)) * 100.0
+        
+        tag_overlap = 1.0 # MLOps has 'coding' in tags and user has ['coding'] in likes
+        
+        # Z-standardize
+        riasec_scaled = (riasec_similarity - coefs["mean_riasec_similarity"]) / coefs["std_riasec_similarity"]
+        tag_scaled = (tag_overlap - coefs["mean_tag_overlap"]) / coefs["std_tag_overlap"]
+        
+        logit = coefs["intercept"] + math.log(15.0) + (coefs["coef_riasec_similarity"] * riasec_scaled) + (coefs["coef_tag_overlap"] * tag_scaled)
+        expected_prob = 1.0 / (1.0 + math.exp(-logit))
+        expected_base_score = expected_prob * 100.0
+        
+        self.assertAlmostEqual(mlops["base_score"], expected_base_score, places=1)
+        print("Success: Live API matching scores correctly reflect z-standardized model coefficients.")
 
     def test_milestones_and_quizzes_present(self):
         payload = {
