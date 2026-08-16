@@ -1,5 +1,7 @@
 import json
-from app import app
+import math
+from app import app, load_onet_data
+from train_model import get_career_riasec_and_tags, compute_features
 
 def run_ablation_eval():
     print("=" * 90)
@@ -112,5 +114,99 @@ def run_ablation_eval():
             print("\n  >> Alternate Exploring Recommendations: None scored higher than top curated.")
         print("=" * 90)
 
+def run_model_comparison_eval():
+    print("\n" + "=" * 90)
+    print("HEURISTIC VS TRAINED ML MODEL COMPARISON STUDY")
+    print("=" * 90)
+    
+    # 1. Load O*NET database
+    try:
+        onet_db = load_onet_data()
+    except Exception as e:
+        print(f"Error loading O*NET database: {e}")
+        return
+        
+    # 2. Load trained coefficients
+    try:
+        with open("onet_data/model_coefficients.json", "r") as f:
+            coefs = json.load(f)
+        intercept = coefs["intercept"]
+        coef_riasec = coefs["coef_riasec_similarity"]
+        coef_tag = coefs["coef_tag_overlap"]
+    except Exception as e:
+        print(f"Error loading model coefficients: {e}")
+        return
+        
+    # 3. Load held-out test set
+    try:
+        with open("onet_data/resume_test_set.json", "r") as f:
+            test_set = json.load(f)
+    except Exception as e:
+        print(f"Error loading test set: {e}")
+        return
+        
+    heuristic_top5_hits = 0
+    heuristic_top10_hits = 0
+    model_top5_hits = 0
+    model_top10_hits = 0
+    
+    all_socs = list(onet_db.keys())
+    
+    for ex in test_set:
+        user_riasec = ex["riasec"]
+        user_likes = ex["likes"]
+        target_soc = ex["soc_code"]
+        
+        heuristic_scores = []
+        model_scores = []
+        
+        for soc in all_socs:
+            career_riasec, career_tags = get_career_riasec_and_tags(soc, onet_db)
+            if career_riasec is None:
+                continue
+                
+            feats = compute_features(user_riasec, user_likes, career_riasec, career_tags)
+            riasec_sim, tag_overlap = feats[0], feats[1]
+            
+            # Heuristic score calculation
+            h_score = riasec_sim + (4.0 * tag_overlap)
+            heuristic_scores.append((soc, h_score))
+            
+            # ML Model score calculation (logistic probability rescaled to 0-100)
+            logit = intercept + (coef_riasec * riasec_sim) + (coef_tag * tag_overlap)
+            prob = 1.0 / (1.0 + math.exp(-logit))
+            m_score = prob * 100.0
+            model_scores.append((soc, m_score))
+            
+        heuristic_scores.sort(key=lambda x: x[1], reverse=True)
+        model_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        heuristic_ranks = [x[0] for x in heuristic_scores]
+        model_ranks = [x[0] for x in model_scores]
+        
+        if target_soc in heuristic_ranks[:5]:
+            heuristic_top5_hits += 1
+        if target_soc in heuristic_ranks[:10]:
+            heuristic_top10_hits += 1
+            
+        if target_soc in model_ranks[:5]:
+            model_top5_hits += 1
+        if target_soc in model_ranks[:10]:
+            model_top10_hits += 1
+            
+    total_test = len(test_set)
+    heuristic_top5_acc = (heuristic_top5_hits / total_test) * 100.0
+    heuristic_top10_acc = (heuristic_top10_hits / total_test) * 100.0
+    model_top5_acc = (model_top5_hits / total_test) * 100.0
+    model_top10_acc = (model_top10_hits / total_test) * 100.0
+    
+    print(f"Test Set Size: {total_test} profiles")
+    print(f"Metric      | Heuristic Weights | Trained ML Model | Lift")
+    print("-" * 90)
+    print(f"Top-5 Acc   | {heuristic_top5_acc:16.2f}% | {model_top5_acc:15.2f}% | {model_top5_acc - heuristic_top5_acc:+.2f}%")
+    print(f"Top-10 Acc  | {heuristic_top10_acc:16.2f}% | {model_top10_acc:15.2f}% | {model_top10_acc - heuristic_top10_acc:+.2f}%")
+    print("=" * 90)
+
 if __name__ == "__main__":
     run_ablation_eval()
+    run_model_comparison_eval()
