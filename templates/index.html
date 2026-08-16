@@ -1086,7 +1086,11 @@
                 financial_flexibility: formData.get('financial_flexibility')
             };
 
-            fetch('/api/match', {
+            const apiBase = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '') 
+                ? '' 
+                : 'https://pathfinder-backend-bzs6.onrender.com';
+
+            fetch(apiBase + '/api/match', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
