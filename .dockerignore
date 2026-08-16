@@ -4,7 +4,6 @@ onet_data/db_30_3_text.zip
 __pycache__/
 hf_deploy/
 Dockerfile
-requirements.txt
 server.rb
 verify_app.py
 eval_ablation.py
