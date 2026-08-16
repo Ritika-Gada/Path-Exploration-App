@@ -87,7 +87,7 @@ Curated careers in PathFinder are mapped to their official O*NET counterparts an
 | `customer_success_manager` | Customer Success Manager | `41-3091.00` | Sales Representatives of Services, All Other |
 | `digital_content_strategist` | Digital Content Strategist | `27-3043.00` | Writers and Authors |
 | `talent_acquisition_partner` | Talent Acquisition Partner | `13-1071.00` | Human Resources Specialists |
-| `agile_scrum_master` | Agile Scrum Master | `15-1299.09` | Information Technology Project Managers |
+| `agile_scrum_master` | Agile Scrum Master | `13-1082.00` | Project Management Specialists |
 | `fintech_financial_planner` | Fintech Financial Planner | `13-2052.00` | Personal Financial Advisors |
 | `healthcare_informatics_spec`| Healthcare Informatics Specialist| `15-1211.01` | Health Informatics Specialists |
 | `ecommerce_brand_manager` | E-commerce Brand Manager | `11-2021.00` | Marketing Managers |
@@ -139,3 +139,57 @@ Tests include checks for:
 - Self-judgement alignment percentage calculations.
 - Safe handling of null values (skipped quiz questions).
 - O*NET overrides and score component integrity checks.
+
+---
+
+## 7. Machine Learning Pipeline
+
+PathFinder uses a trained, explainable Logistic Regression model to combine user RIASEC similarity and tag overlap features into a base match probability score, replacing the original hand-tuned heuristic formula.
+
+### Problem Framing
+- **Goal:** Predict the probability that a given occupation is the user's correct fit.
+- **Input Features:**
+  1. `riasec_similarity`: Manhattan-based similarity percentage ($0-100\%$) between the user's RIASEC scores and the O*NET rescaled scores.
+  2. `tag_overlap`: The count of matching tags ($0-10$) between user's likes (derived from resume keywords) and the occupation's tags.
+- **Labels:** Positive label ($1$) represents the occupation mapped to the user's stated profession. Negative samples ($0$) are randomly selected (5 curated + 10 wider pool careers per user profile) to form a $15:1$ negative-to-positive training distribution.
+
+### Data Source & Limitations
+- **Source:** Kaggle Resume Dataset (962 profiles) mapped to equivalent O*NET codes.
+- **Limitations & Proxies:**
+  - RIASEC profiles are derived using case-insensitive keyword counts scaled to $0-10$, which serves as a proxy and not a validated psychometric measurement.
+  - User likes tags are extracted independently from resume texts based on tag keyword frequencies.
+  - Resumes do not contain signals for financial constraints or career motivation. Hence, `driver_bonus` and `barrier_adjustment` are kept rule-based by deliberate design rather than fabricated.
+
+### Feature Standardization (Z-Scoring)
+To ensure coefficients are comparable and explainable, raw features are standardized using parameters computed from the training set:
+- **RIASEC Similarity:** Mean = `61.1772`, Std = `10.6462`
+- **Tag Overlap:** Mean = `0.6981`, Std = `1.1706`
+
+$$x_{\text{scaled}} = \frac{x - \mu}{\sigma}$$
+
+### Model Coefficients & Explanations
+The z-standardized coefficients trained on $769$ profiles (with $12,304$ samples) are:
+- **Intercept ($\beta_0$):** `-3.0689`
+- **RIASEC Similarity Coefficient ($\beta_1$):** `0.7422`
+- **Tag Overlap Coefficient ($\beta_2$):** `0.3974`
+
+**Key Interview Defense/Insight:**
+- RIASEC similarity ($\beta_1 = 0.7422$) has roughly twice the predictive weight of tag overlap ($\beta_2 = 0.3974$) in identifying a user's stated career path.
+- **Log-Odds Prior Shift Correction:** Since training used negative sampling ($15:1$), the prior probability of a match is artificially low ($6.25\%$). At inference, we apply a log-prior correction of $+ \log(15.0) \approx +2.708$ to the logit, which recalibrates matching probabilities into a natural $50-95\%$ user-friendly range.
+
+### Model Evaluation & Ablation
+Evaluating the model against the original heuristic on the held-out test set ($193$ profiles, $1016$ O*NET candidate pool size) yielded:
+
+| Metric | Random Chance | Heuristic Weights | Trained ML Model | Lift |
+| :--- | :--- | :--- | :--- | :--- |
+| **Top-5 Acc** | `0.492%` | `26.94%` | `28.50%` | **+1.55%** |
+| **Top-10 Acc**| `0.984%` | `36.27%` | `39.38%` | **+3.11%** |
+
+- **McNemar exact binomial p-value:** `0.2500` (contingency table: both correct = 52, model-only = 3, heuristic-only = 0, both incorrect = 138).
+- **Statistical Power Caveat:** With only 3 discordant pairs (b=3, c=0), the test has low statistical power—so "not significant" means "we can't yet prove a difference with this sample size," not "we've proven there's no difference."
+
+To run the full evaluation:
+```bash
+python3 eval_ablation.py
+```
+
