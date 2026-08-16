@@ -12,13 +12,17 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 739,
@@ -33,13 +37,16 @@
       "C": 0.56
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 3,
@@ -54,14 +61,15 @@
       "C": 0.56
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 872,
@@ -76,12 +84,13 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 161,
@@ -96,14 +105,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 445,
@@ -118,14 +125,14 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 893,
@@ -140,12 +147,12 @@
       "C": 5.0
     },
     "likes": [
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 960,
@@ -160,12 +167,10 @@
       "C": 5.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 917,
@@ -179,11 +184,17 @@
       "E": 0.0,
       "C": 4.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 656,
@@ -197,11 +208,17 @@
       "E": 0.83,
       "C": 3.33
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "security",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 863,
@@ -216,12 +233,14 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 768,
@@ -236,14 +255,11 @@
       "C": 0.56
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 898,
@@ -258,13 +274,14 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 698,
@@ -279,13 +296,16 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 117,
@@ -299,11 +319,11 @@
       "E": 5.0,
       "C": 5.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "likes": [
+      "data-analysis",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 738,
@@ -318,12 +338,13 @@
       "C": 0.85
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 797,
@@ -338,14 +359,15 @@
       "C": 1.11
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "remote-work",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 11,
@@ -360,12 +382,12 @@
       "C": 1.67
     },
     "likes": [
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 566,
@@ -380,14 +402,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 257,
@@ -401,11 +422,14 @@
       "E": 10.0,
       "C": 1.06
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 541,
@@ -420,13 +444,15 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 479,
@@ -441,14 +467,15 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 795,
@@ -463,14 +490,15 @@
       "C": 0.77
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 390,
@@ -485,14 +513,12 @@
       "C": 1.3
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 394,
@@ -507,13 +533,12 @@
       "C": 1.43
     },
     "likes": [
-      "ui-ux",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 65,
@@ -528,10 +553,7 @@
       "C": 5.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 610,
@@ -546,13 +568,14 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 918,
@@ -567,12 +590,10 @@
       "C": 5.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 696,
@@ -587,12 +608,13 @@
       "C": 8.24
     },
     "likes": [
-      "ui-ux"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 920,
@@ -606,11 +628,11 @@
       "E": 5.0,
       "C": 5.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "creative-design",
+      "leadership"
+    ],
+    "dislikes": []
   },
   {
     "id": 642,
@@ -625,12 +647,14 @@
       "C": 0.38
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 156,
@@ -645,14 +669,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 112,
@@ -667,12 +689,16 @@
       "C": 3.21
     },
     "likes": [
-      "ui-ux"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 48,
@@ -687,10 +713,7 @@
       "C": 0.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 773,
@@ -705,14 +728,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 93,
@@ -726,11 +748,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "likes": [
+      "creative-design"
+    ],
+    "dislikes": []
   },
   {
     "id": 505,
@@ -744,11 +765,11 @@
       "E": 0.0,
       "C": 0.4
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "creative-design",
+      "data-analysis"
+    ],
+    "dislikes": []
   },
   {
     "id": 521,
@@ -763,13 +784,15 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 141,
@@ -784,14 +807,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 845,
@@ -806,14 +827,11 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 888,
@@ -828,12 +846,14 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 408,
@@ -848,12 +868,13 @@
       "C": 4.44
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 597,
@@ -868,14 +889,14 @@
       "C": 1.82
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 438,
@@ -890,14 +911,15 @@
       "C": 0.71
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 598,
@@ -912,14 +934,12 @@
       "C": 1.11
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 764,
@@ -934,13 +954,13 @@
       "C": 0.67
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 269,
@@ -955,12 +975,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux"
+      "client-interaction",
+      "creative-design",
+      "leadership",
+      "public-speaking",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 551,
@@ -975,13 +996,13 @@
       "C": 0.29
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 936,
@@ -995,11 +1016,13 @@
       "E": 0.0,
       "C": 10.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "creative-design",
+      "data-analysis",
+      "remote-work",
+      "research"
+    ],
+    "dislikes": []
   },
   {
     "id": 762,
@@ -1014,14 +1037,14 @@
       "C": 2.11
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 252,
@@ -1035,11 +1058,14 @@
       "E": 10.0,
       "C": 1.06
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 954,
@@ -1054,13 +1080,14 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 271,
@@ -1074,11 +1101,11 @@
       "E": 5.0,
       "C": 5.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "likes": [
+      "data-analysis",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 146,
@@ -1093,14 +1120,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 469,
@@ -1115,13 +1140,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 658,
@@ -1135,11 +1160,15 @@
       "E": 0.0,
       "C": 3.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "remote-work",
+      "security"
+    ],
+    "dislikes": []
   },
   {
     "id": 405,
@@ -1154,14 +1183,15 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 511,
@@ -1176,13 +1206,17 @@
       "C": 3.29
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 671,
@@ -1196,11 +1230,17 @@
       "E": 0.83,
       "C": 3.33
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "security",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 217,
@@ -1214,11 +1254,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "likes": [
+      "data-analysis"
+    ],
+    "dislikes": []
   },
   {
     "id": 322,
@@ -1233,13 +1272,13 @@
       "C": 0.32
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 735,
@@ -1254,12 +1293,13 @@
       "C": 0.87
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 580,
@@ -1274,14 +1314,12 @@
       "C": 1.11
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 216,
@@ -1296,12 +1334,11 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux"
+      "coding",
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 67,
@@ -1315,11 +1352,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction"
+    ],
+    "dislikes": []
   },
   {
     "id": 274,
@@ -1334,12 +1370,16 @@
       "C": 5.83
     },
     "likes": [
-      "ui-ux"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 410,
@@ -1354,14 +1394,16 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 323,
@@ -1376,13 +1418,12 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "data-analysis",
+      "public-speaking",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 824,
@@ -1397,14 +1438,11 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 944,
@@ -1418,11 +1456,15 @@
       "E": 10.0,
       "C": 8.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "client-interaction",
+      "coding",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 234,
@@ -1436,11 +1478,15 @@
       "E": 10.0,
       "C": 2.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research"
+    ],
+    "dislikes": []
   },
   {
     "id": 57,
@@ -1455,10 +1501,7 @@
       "C": 5.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 794,
@@ -1473,14 +1516,13 @@
       "C": 4.17
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 786,
@@ -1495,14 +1537,13 @@
       "C": 1.82
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 332,
@@ -1517,14 +1558,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 701,
@@ -1539,13 +1578,16 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 224,
@@ -1560,12 +1602,9 @@
       "C": 2.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 570,
@@ -1580,12 +1619,11 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "coding",
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 704,
@@ -1600,13 +1638,16 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 655,
@@ -1621,12 +1662,15 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 276,
@@ -1641,13 +1685,14 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 388,
@@ -1662,14 +1707,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 473,
@@ -1684,13 +1727,15 @@
       "C": 1.43
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 167,
@@ -1705,14 +1750,13 @@
       "C": 0.83
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 956,
@@ -1727,12 +1771,12 @@
       "C": 5.0
     },
     "likes": [
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 746,
@@ -1747,13 +1791,16 @@
       "C": 1.15
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 546,
@@ -1768,13 +1815,15 @@
       "C": 0.93
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 175,
@@ -1789,14 +1838,13 @@
       "C": 0.83
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 871,
@@ -1811,13 +1859,11 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 623,
@@ -1832,13 +1878,17 @@
       "C": 1.67
     },
     "likes": [
-      "ui-ux",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 73,
@@ -1852,11 +1902,10 @@
       "E": 10.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "likes": [
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 663,
@@ -1870,11 +1919,15 @@
       "E": 0.0,
       "C": 3.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "remote-work",
+      "security"
+    ],
+    "dislikes": []
   },
   {
     "id": 699,
@@ -1889,12 +1942,13 @@
       "C": 8.24
     },
     "likes": [
-      "ui-ux"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 932,
@@ -1909,12 +1963,10 @@
       "C": 5.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 273,
@@ -1928,11 +1980,13 @@
       "E": 4.44,
       "C": 1.11
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 686,
@@ -1947,13 +2001,16 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 214,
@@ -1968,12 +2025,9 @@
       "C": 2.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 363,
@@ -1988,13 +2042,13 @@
       "C": 0.77
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 379,
@@ -2009,13 +2063,12 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "data-analysis",
+      "public-speaking",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 166,
@@ -2030,14 +2083,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 373,
@@ -2052,12 +2103,10 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "coding",
+      "leadership"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 854,
@@ -2072,14 +2121,12 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 650,
@@ -2094,13 +2141,17 @@
       "C": 1.67
     },
     "likes": [
-      "ui-ux",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 464,
@@ -2115,14 +2166,15 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 916,
@@ -2136,11 +2188,15 @@
       "E": 10.0,
       "C": 8.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "coding",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 909,
@@ -2154,11 +2210,15 @@
       "E": 10.0,
       "C": 8.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "coding",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 103,
@@ -2172,11 +2232,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "likes": [
+      "creative-design"
+    ],
+    "dislikes": []
   },
   {
     "id": 940,
@@ -2191,13 +2250,14 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 875,
@@ -2212,14 +2272,13 @@
       "C": 0.5
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 81,
@@ -2234,10 +2293,7 @@
       "C": 0.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 296,
@@ -2252,10 +2308,7 @@
       "C": 0.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 791,
@@ -2270,14 +2323,13 @@
       "C": 1.82
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 233,
@@ -2291,11 +2343,14 @@
       "E": 10.0,
       "C": 1.18
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 677,
@@ -2310,13 +2365,17 @@
       "C": 3.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "remote-work",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 46,
@@ -2331,10 +2390,7 @@
       "C": 5.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 71,
@@ -2348,11 +2404,12 @@
       "E": 0.0,
       "C": 10.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "data-analysis",
+      "research"
+    ],
+    "dislikes": []
   },
   {
     "id": 721,
@@ -2367,14 +2424,16 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 196,
@@ -2389,12 +2448,11 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux"
+      "coding",
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 591,
@@ -2409,14 +2467,14 @@
       "C": 1.82
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 370,
@@ -2431,13 +2489,10 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 882,
@@ -2452,12 +2507,13 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 633,
@@ -2472,12 +2528,14 @@
       "C": 0.38
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 643,
@@ -2492,13 +2550,14 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 849,
@@ -2513,14 +2572,14 @@
       "C": 0.93
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 300,
@@ -2534,11 +2593,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "data-analysis"
+    ],
+    "dislikes": []
   },
   {
     "id": 565,
@@ -2553,13 +2611,10 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 80,
@@ -2574,12 +2629,13 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 387,
@@ -2594,12 +2650,10 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "coding",
+      "leadership"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 127,
@@ -2614,12 +2668,11 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 549,
@@ -2634,13 +2687,15 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 470,
@@ -2655,13 +2710,12 @@
       "C": 2.76
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 747,
@@ -2676,14 +2730,11 @@
       "C": 0.56
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 44,
@@ -2698,10 +2749,7 @@
       "C": 5.0
     },
     "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 826,
@@ -2716,13 +2764,14 @@
       "C": 0.67
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 270,
@@ -2737,13 +2786,14 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 618,
@@ -2758,12 +2808,14 @@
       "C": 0.38
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 352,
@@ -2778,13 +2830,12 @@
       "C": 1.43
     },
     "likes": [
-      "ui-ux",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 867,
@@ -2799,12 +2850,13 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 367,
@@ -2819,13 +2871,11 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 99,
@@ -2839,11 +2889,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "research"
+    ],
+    "dislikes": []
   },
   {
     "id": 389,
@@ -2858,12 +2907,10 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "client-interaction",
+      "coding"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 94,
@@ -2877,11 +2924,11 @@
       "E": 5.0,
       "C": 5.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "likes": [
+      "creative-design",
+      "data-analysis"
+    ],
+    "dislikes": []
   },
   {
     "id": 952,
@@ -2895,11 +2942,17 @@
       "E": 0.0,
       "C": 4.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 344,
@@ -2914,13 +2967,13 @@
       "C": 1.18
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 781,
@@ -2935,13 +2988,16 @@
       "C": 1.15
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 220,
@@ -2956,13 +3012,15 @@
       "C": 3.33
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 159,
@@ -2977,13 +3035,15 @@
       "C": 2.38
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 926,
@@ -2998,13 +3058,14 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 348,
@@ -3019,14 +3080,12 @@
       "C": 1.3
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 945,
@@ -3040,11 +3099,17 @@
       "E": 0.0,
       "C": 4.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 714,
@@ -3059,13 +3124,17 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "remote-work",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 163,
@@ -3080,13 +3149,11 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "python"
+      "coding",
+      "creative-design",
+      "public-speaking"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 825,
@@ -3101,12 +3168,10 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "coding",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 777,
@@ -3121,14 +3186,14 @@
       "C": 1.11
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 6,
@@ -3143,12 +3208,13 @@
       "C": 1.74
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 890,
@@ -3163,14 +3229,13 @@
       "C": 0.5
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 828,
@@ -3185,14 +3250,14 @@
       "C": 0.93
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 284,
@@ -3206,11 +3271,11 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "data-analysis",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 603,
@@ -3224,11 +3289,17 @@
       "E": 10.0,
       "C": 4.4
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "security",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 459,
@@ -3243,13 +3314,13 @@
       "C": 7.5
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 225,
@@ -3264,12 +3335,11 @@
       "C": 1.43
     },
     "likes": [
-      "machine-learning"
+      "data-analysis",
+      "leadership",
+      "public-speaking"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 429,
@@ -3283,11 +3353,13 @@
       "E": 6.67,
       "C": 10.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
+    ],
+    "dislikes": []
   },
   {
     "id": 948,
@@ -3301,11 +3373,11 @@
       "E": 5.0,
       "C": 5.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "likes": [
+      "creative-design",
+      "leadership"
+    ],
+    "dislikes": []
   },
   {
     "id": 718,
@@ -3320,14 +3392,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 665,
@@ -3342,12 +3413,15 @@
       "C": 0.0
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 733,
@@ -3362,13 +3436,15 @@
       "C": 1.23
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 203,
@@ -3383,12 +3459,12 @@
       "C": 2.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 574,
@@ -3403,14 +3479,12 @@
       "C": 1.11
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 27,
@@ -3425,13 +3499,14 @@
       "C": 0.82
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 616,
@@ -3446,13 +3521,14 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 517,
@@ -3467,13 +3543,15 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 238,
@@ -3487,11 +3565,14 @@
       "E": 10.0,
       "C": 1.18
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 223,
@@ -3506,12 +3587,12 @@
       "C": 2.0
     },
     "likes": [
-      "ui-ux"
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 95,
@@ -3525,11 +3606,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "likes": [
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 30,
@@ -3544,12 +3624,17 @@
       "C": 0.24
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 32,
@@ -3564,13 +3649,13 @@
       "C": 0.5
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 432,
@@ -3585,14 +3670,15 @@
       "C": 0.71
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 604,
@@ -3607,13 +3693,16 @@
       "C": 2.22
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 89,
@@ -3627,11 +3716,10 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "likes": [
+      "research"
+    ],
+    "dislikes": []
   },
   {
     "id": 558,
@@ -3646,12 +3734,11 @@
       "C": 0.0
     },
     "likes": [
-      "python"
+      "coding",
+      "creative-design",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 913,
@@ -3665,11 +3752,11 @@
       "E": 5.0,
       "C": 5.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "likes": [
+      "creative-design",
+      "leadership"
+    ],
+    "dislikes": []
   },
   {
     "id": 758,
@@ -3684,13 +3771,13 @@
       "C": 1.11
     },
     "likes": [
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Growth",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 692,
@@ -3705,13 +3792,16 @@
       "C": 10.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning"
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 104,
@@ -3725,11 +3815,14 @@
       "E": 10.0,
       "C": 1.67
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Low"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "public-speaking",
+      "research"
+    ],
+    "dislikes": []
   },
   {
     "id": 754,
@@ -3744,14 +3837,11 @@
       "C": 0.56
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 142,
@@ -3766,14 +3856,13 @@
       "C": 0.83
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "client-interaction",
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "security"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 228,
@@ -3787,11 +3876,14 @@
       "E": 10.0,
       "C": 1.18
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "likes": [
+      "client-interaction",
+      "creative-design",
+      "data-analysis",
+      "leadership",
+      "public-speaking"
+    ],
+    "dislikes": []
   },
   {
     "id": 250,
@@ -3806,12 +3898,11 @@
       "C": 1.43
     },
     "likes": [
-      "machine-learning"
+      "data-analysis",
+      "leadership",
+      "public-speaking"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 281,
@@ -3826,12 +3917,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux"
+      "client-interaction",
+      "creative-design",
+      "leadership",
+      "public-speaking",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   },
   {
     "id": 759,
@@ -3846,14 +3938,13 @@
       "C": 0.0
     },
     "likes": [
-      "ui-ux",
-      "machine-learning",
-      "python"
+      "coding",
+      "creative-design",
+      "data-analysis",
+      "research",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Passion",
-    "financial_flexibility": "High"
+    "dislikes": []
   },
   {
     "id": 25,
@@ -3868,12 +3959,11 @@
       "C": 5.0
     },
     "likes": [
-      "machine-learning"
+      "coding",
+      "data-analysis",
+      "research"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Impact",
-    "financial_flexibility": "Low"
+    "dislikes": []
   },
   {
     "id": 114,
@@ -3887,11 +3977,11 @@
       "E": 0.0,
       "C": 0.0
     },
-    "likes": [],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Money",
-    "financial_flexibility": "High"
+    "likes": [
+      "public-speaking",
+      "writing"
+    ],
+    "dislikes": []
   },
   {
     "id": 654,
@@ -3906,11 +3996,13 @@
       "C": 4.0
     },
     "likes": [
-      "machine-learning"
+      "client-interaction",
+      "data-analysis",
+      "public-speaking",
+      "research",
+      "security",
+      "writing"
     ],
-    "dislikes": [],
-    "intent": "Full-time",
-    "driver": "Balance",
-    "financial_flexibility": "Medium"
+    "dislikes": []
   }
 ]

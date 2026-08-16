@@ -44,6 +44,20 @@ RIASEC_LEXICON = {
     'C': ['admin', 'organizer', 'process', 'database-administrator', 'records', 'database-management', 'office', 'audit', 'billing', 'compliance', 'documentation', 'conventional', 'inventory', 'excel', 'structure']
 }
 
+# Tag vocabulary keywords to extract from resume content
+TAG_LEXICON = {
+    'client-interaction': ['client', 'customer', 'user', 'stakeholder', 'engagement', 'relationship', 'communication'],
+    'coding': ['programming', 'code', 'coder', 'built', 'implemented', 'java', 'python', 'javascript', 'developer', 'backend', 'frontend', 'c++', 'c#'],
+    'creative-design': ['design', 'figma', 'creative', 'artistic', 'graphics', 'sketch', 'photoshop', 'layout', 'visual', 'wireframe', 'ui', 'ux'],
+    'data-analysis': ['analytics', 'analysis', 'statistics', 'data', 'sql', 'excel', 'spark', 'tableau', 'bi', 'pandas', 'model'],
+    'leadership': ['manager', 'lead', 'leadership', 'managed', 'directed', 'supervised', 'scrum-master', 'coordinator', 'head', 'founder', 'pmo'],
+    'public-speaking': ['presentation', 'present', 'speaking', 'trainer', 'lecturer', 'taught', 'conferences'],
+    'remote-work': ['remote', 'telecommute', 'distributed team', 'zoom', 'slack', 'home office'],
+    'research': ['research', 'scientific', 'study', 'papers', 'publication', 'lab', 'academic', 'theory', 'literature'],
+    'security': ['security', 'cybersecurity', 'firewall', 'encryption', 'vulnerability', 'threat', 'penetration', 'compliance'],
+    'writing': ['writing', 'content', 'documentation', 'author', 'articles', 'technical writing', 'blogs']
+}
+
 def derive_riasec_scores(text):
     text_lower = text.lower()
     counts = {dim: 1.0 for dim in ['R', 'I', 'A', 'S', 'E', 'C']}
@@ -64,6 +78,18 @@ def derive_riasec_scores(text):
             rescaled[dim] = 5.0
             
     return rescaled
+
+def extract_tags(text):
+    text_lower = text.lower()
+    detected_tags = []
+    for tag, keywords in TAG_LEXICON.items():
+        match_count = 0
+        for kw in keywords:
+            match_count += text_lower.count(kw)
+        # If any keyword is found, add the tag
+        if match_count > 0:
+            detected_tags.append(tag)
+    return detected_tags
 
 def build_dataset():
     print("Step 1: Downloading raw resume dataset...")
@@ -103,40 +129,16 @@ def build_dataset():
         # Derive RIASEC scores
         derived_riasec = derive_riasec_scores(resume_text)
         
-        # Add metadata features to emulate user selections
-        # For realistic modeling, let's randomly assign some preferences
-        # but keep it deterministic by seeding
-        random.seed(idx)
-        
-        # Let's derive primary drivers/likes/flexibility naturally or semi-randomly
-        drivers = ['Passion', 'Money', 'Growth', 'Impact', 'Balance']
-        driver = random.choice(drivers)
-        
-        flexibilities = ['Low', 'Medium', 'High']
-        flexibility = random.choice(flexibilities)
-        
-        # Generate some likes based on derived high-interest categories
-        # UX Designer gets ui-ux figma, Developer gets coding, HR gets recruiting
-        likes = []
-        if 'design' in resume_text.lower():
-            likes.append('ui-ux')
-        if 'figma' in resume_text.lower():
-            likes.append('graphic-design')
-        if 'data' in resume_text.lower():
-            likes.append('machine-learning')
-        if 'developer' in resume_text.lower():
-            likes.append('python')
+        # Derive likes tags from real resume content via keywords
+        detected_likes = extract_tags(resume_text)
             
         processed_examples.append({
             "id": idx,
             "category": category,
             "soc_code": soc_code,
             "riasec": derived_riasec,
-            "likes": likes,
-            "dislikes": [],
-            "intent": "Full-time",
-            "driver": driver,
-            "financial_flexibility": flexibility
+            "likes": detected_likes,
+            "dislikes": []
         })
         
     print(f"Processed {len(processed_examples)} examples. Skipped: {skipped_count}")
@@ -160,14 +162,6 @@ def build_dataset():
         json.dump(test_set, f, indent=2)
         
     print("Successfully saved train and test datasets to onet_data/ folder.")
-    
-    # Print sample distribution
-    cat_counts = {}
-    for ex in processed_examples:
-        cat_counts[ex["category"]] = cat_counts.get(ex["category"], 0) + 1
-    print("\nProcessed category distribution:")
-    for cat, count in sorted(cat_counts.items(), key=lambda x: x[1], reverse=True):
-        print(f"  {cat}: {count} (mapped to SOC: {CATEGORY_SOC_MAP[cat]})")
 
 if __name__ == "__main__":
     build_dataset()
