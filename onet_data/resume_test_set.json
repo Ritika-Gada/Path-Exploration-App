@@ -1,0 +1,3916 @@
+[
+  {
+    "id": 736,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 0.87,
+      "I": 10.0,
+      "A": 0.22,
+      "S": 0.43,
+      "E": 0.43,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 739,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.28,
+      "S": 1.11,
+      "E": 0.83,
+      "C": 0.56
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 3,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.41,
+      "S": 1.13,
+      "E": 1.69,
+      "C": 0.56
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 872,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 5.0,
+      "S": 10.0,
+      "E": 5.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 161,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.37,
+      "S": 1.76,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 445,
+    "category": "SAP Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 9.09,
+      "A": 6.36,
+      "S": 2.73,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 893,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 1.67,
+      "I": 10.0,
+      "A": 1.67,
+      "S": 1.67,
+      "E": 0.0,
+      "C": 5.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 960,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 10.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 5.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 917,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 1.0,
+      "E": 0.0,
+      "C": 4.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 656,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 3.33,
+      "S": 2.5,
+      "E": 0.83,
+      "C": 3.33
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 863,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 1.43,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 2.86,
+      "E": 1.43,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 768,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.56,
+      "I": 10.0,
+      "A": 0.56,
+      "S": 0.56,
+      "E": 0.0,
+      "C": 0.56
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 898,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 0.71,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.71,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 698,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.0,
+      "A": 2.0,
+      "S": 8.67,
+      "E": 3.33,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 117,
+    "category": "Arts",
+    "soc_code": "27-1019.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 738,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 1.06,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.43,
+      "E": 0.0,
+      "C": 0.85
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 797,
+    "category": "ETL Developer",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.33,
+      "S": 2.0,
+      "E": 1.33,
+      "C": 1.11
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 11,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.67,
+      "S": 0.0,
+      "E": 1.67,
+      "C": 1.67
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 566,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 1.25,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 4.58,
+      "E": 1.67,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 257,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.21,
+      "I": 0.0,
+      "A": 1.7,
+      "S": 3.83,
+      "E": 10.0,
+      "C": 1.06
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 541,
+    "category": "Operations Manager",
+    "soc_code": "11-1021.00",
+    "riasec": {
+      "R": 3.75,
+      "I": 0.0,
+      "A": 0.83,
+      "S": 5.83,
+      "E": 7.08,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 479,
+    "category": "Automation Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 1.38,
+      "I": 10.0,
+      "A": 7.59,
+      "S": 2.07,
+      "E": 6.55,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 795,
+    "category": "ETL Developer",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 2.69,
+      "S": 5.38,
+      "E": 4.62,
+      "C": 0.77
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 390,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.43,
+      "I": 10.0,
+      "A": 2.17,
+      "S": 0.0,
+      "E": 0.87,
+      "C": 1.3
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 394,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.43,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 1.43
+    },
+    "likes": [
+      "ui-ux",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 65,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 610,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.56,
+      "I": 10.0,
+      "A": 0.56,
+      "S": 2.22,
+      "E": 1.11,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 918,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 10.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 5.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 696,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 2.35,
+      "I": 0.0,
+      "A": 4.71,
+      "S": 10.0,
+      "E": 7.06,
+      "C": 8.24
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 920,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 642,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 4.23,
+      "S": 4.62,
+      "E": 1.92,
+      "C": 0.38
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 156,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.37,
+      "S": 1.76,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 112,
+    "category": "Arts",
+    "soc_code": "27-1019.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 1.43,
+      "A": 9.64,
+      "S": 5.0,
+      "E": 10.0,
+      "C": 3.21
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 48,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 10.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 773,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 1.07,
+      "I": 10.0,
+      "A": 1.79,
+      "S": 0.71,
+      "E": 1.07,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 93,
+    "category": "Advocate",
+    "soc_code": "23-1011.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 505,
+    "category": "Electrical Engineering",
+    "soc_code": "17-2071.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.4,
+      "A": 3.6,
+      "S": 0.4,
+      "E": 0.0,
+      "C": 0.4
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 521,
+    "category": "Operations Manager",
+    "soc_code": "11-1021.00",
+    "riasec": {
+      "R": 3.75,
+      "I": 0.0,
+      "A": 0.83,
+      "S": 5.83,
+      "E": 7.08,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 141,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.37,
+      "S": 1.76,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 845,
+    "category": "DotNet Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.77,
+      "I": 10.0,
+      "A": 1.54,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 888,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 1.43,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 2.86,
+      "E": 1.43,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 408,
+    "category": "Business Analyst",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 3.33,
+      "A": 1.11,
+      "S": 7.78,
+      "E": 10.0,
+      "C": 4.44
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 597,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.82,
+      "S": 3.64,
+      "E": 1.82,
+      "C": 1.82
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 438,
+    "category": "SAP Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 8.93,
+      "S": 6.07,
+      "E": 8.57,
+      "C": 0.71
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 598,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 3.33,
+      "S": 1.67,
+      "E": 0.56,
+      "C": 1.11
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 764,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 2.0,
+      "S": 0.0,
+      "E": 2.0,
+      "C": 0.67
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 269,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 3.33,
+      "S": 10.0,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 551,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 5.59,
+      "E": 0.29,
+      "C": 0.29
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 936,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 2.5,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 10.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 762,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.79,
+      "S": 0.53,
+      "E": 1.84,
+      "C": 2.11
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 252,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.21,
+      "I": 0.0,
+      "A": 1.7,
+      "S": 3.83,
+      "E": 10.0,
+      "C": 1.06
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 954,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 0.71,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.71,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 271,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 146,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.37,
+      "S": 1.76,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 469,
+    "category": "Automation Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 9.09,
+      "A": 4.55,
+      "S": 1.82,
+      "E": 1.82,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 658,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 1.0,
+      "S": 1.25,
+      "E": 0.0,
+      "C": 3.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 405,
+    "category": "Business Analyst",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 8.89,
+      "S": 6.67,
+      "E": 9.44,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 511,
+    "category": "Operations Manager",
+    "soc_code": "11-1021.00",
+    "riasec": {
+      "R": 0.86,
+      "I": 0.0,
+      "A": 0.86,
+      "S": 10.0,
+      "E": 3.57,
+      "C": 3.29
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 671,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 3.33,
+      "S": 2.5,
+      "E": 0.83,
+      "C": 3.33
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 217,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 322,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.65,
+      "S": 2.26,
+      "E": 0.0,
+      "C": 0.32
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 735,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 1.3,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.87
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 580,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 3.33,
+      "S": 1.67,
+      "E": 0.56,
+      "C": 1.11
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 216,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 8.0,
+      "I": 4.0,
+      "A": 6.0,
+      "S": 10.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 67,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 10.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 274,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 3.33,
+      "S": 3.33,
+      "E": 10.0,
+      "C": 5.83
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 410,
+    "category": "Business Analyst",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.33,
+      "A": 7.0,
+      "S": 6.67,
+      "E": 9.0,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 323,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 824,
+    "category": "DotNet Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.77,
+      "I": 10.0,
+      "A": 1.54,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 944,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 8.0,
+      "E": 10.0,
+      "C": 8.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 234,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.67,
+      "S": 2.67,
+      "E": 10.0,
+      "C": 2.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 57,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 794,
+    "category": "ETL Developer",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 5.42,
+      "S": 2.92,
+      "E": 0.42,
+      "C": 4.17
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 786,
+    "category": "ETL Developer",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 2.73,
+      "S": 0.91,
+      "E": 1.82,
+      "C": 1.82
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 332,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 1.58,
+      "I": 10.0,
+      "A": 6.32,
+      "S": 1.58,
+      "E": 1.05,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 701,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.0,
+      "A": 2.0,
+      "S": 8.67,
+      "E": 3.33,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 224,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 8.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 2.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 570,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.67,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 704,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.0,
+      "A": 2.0,
+      "S": 8.67,
+      "E": 3.33,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 655,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.8,
+      "A": 2.0,
+      "S": 2.8,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 276,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.91,
+      "I": 2.73,
+      "A": 6.36,
+      "S": 3.64,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 388,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 1.58,
+      "I": 10.0,
+      "A": 6.32,
+      "S": 1.58,
+      "E": 1.05,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 473,
+    "category": "Automation Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 7.14,
+      "I": 10.0,
+      "A": 5.71,
+      "S": 0.0,
+      "E": 1.43,
+      "C": 1.43
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 167,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 3.75,
+      "A": 10.0,
+      "S": 2.92,
+      "E": 0.42,
+      "C": 0.83
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 956,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 1.67,
+      "I": 10.0,
+      "A": 1.67,
+      "S": 1.67,
+      "E": 0.0,
+      "C": 5.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 746,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.15,
+      "S": 1.92,
+      "E": 1.15,
+      "C": 1.15
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 546,
+    "category": "Operations Manager",
+    "soc_code": "11-1021.00",
+    "riasec": {
+      "R": 1.67,
+      "I": 0.0,
+      "A": 4.07,
+      "S": 10.0,
+      "E": 3.89,
+      "C": 0.93
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 175,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 3.75,
+      "A": 10.0,
+      "S": 2.92,
+      "E": 0.42,
+      "C": 0.83
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 871,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 2.14,
+      "I": 10.0,
+      "A": 0.71,
+      "S": 0.0,
+      "E": 3.57,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 623,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 4.17,
+      "A": 10.0,
+      "S": 3.33,
+      "E": 5.83,
+      "C": 1.67
+    },
+    "likes": [
+      "ui-ux",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 73,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 663,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 1.0,
+      "S": 1.25,
+      "E": 0.0,
+      "C": 3.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 699,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 2.35,
+      "I": 0.0,
+      "A": 4.71,
+      "S": 10.0,
+      "E": 7.06,
+      "C": 8.24
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 932,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 10.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 5.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 273,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 10.0,
+      "E": 4.44,
+      "C": 1.11
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 686,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.0,
+      "A": 2.0,
+      "S": 8.67,
+      "E": 3.33,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 214,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 8.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 2.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 363,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.54,
+      "S": 3.85,
+      "E": 0.0,
+      "C": 0.77
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 379,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 166,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.37,
+      "S": 1.76,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 373,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 1.43,
+      "E": 1.43,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 854,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 3.33,
+      "S": 0.0,
+      "E": 1.67,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 650,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 4.17,
+      "A": 10.0,
+      "S": 3.33,
+      "E": 5.83,
+      "C": 1.67
+    },
+    "likes": [
+      "ui-ux",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 464,
+    "category": "Automation Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 1.38,
+      "I": 10.0,
+      "A": 7.59,
+      "S": 2.07,
+      "E": 6.55,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 916,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 8.0,
+      "E": 10.0,
+      "C": 8.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 909,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 8.0,
+      "E": 10.0,
+      "C": 8.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 103,
+    "category": "Advocate",
+    "soc_code": "23-1011.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 940,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 0.71,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.71,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 875,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 6.5,
+      "S": 1.0,
+      "E": 0.0,
+      "C": 0.5
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 81,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 10.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 296,
+    "category": "Civil Engineer",
+    "soc_code": "17-2051.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 791,
+    "category": "ETL Developer",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 2.73,
+      "S": 0.91,
+      "E": 1.82,
+      "C": 1.82
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 233,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.35,
+      "A": 1.76,
+      "S": 4.12,
+      "E": 10.0,
+      "C": 1.18
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 677,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 9.0,
+      "A": 1.0,
+      "S": 2.0,
+      "E": 0.0,
+      "C": 3.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 46,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 71,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 6.0,
+      "I": 4.0,
+      "A": 0.0,
+      "S": 4.0,
+      "E": 0.0,
+      "C": 10.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 721,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 2.31,
+      "I": 10.0,
+      "A": 0.19,
+      "S": 1.73,
+      "E": 0.58,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 196,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 8.0,
+      "I": 4.0,
+      "A": 6.0,
+      "S": 10.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 591,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.82,
+      "S": 3.64,
+      "E": 1.82,
+      "C": 1.82
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 370,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 2.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 882,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 5.0,
+      "S": 10.0,
+      "E": 5.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 633,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 4.23,
+      "S": 4.62,
+      "E": 1.92,
+      "C": 0.38
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 643,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.56,
+      "I": 10.0,
+      "A": 0.56,
+      "S": 2.22,
+      "E": 1.11,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 849,
+    "category": "DotNet Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.86,
+      "S": 2.09,
+      "E": 0.23,
+      "C": 0.93
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 300,
+    "category": "Civil Engineer",
+    "soc_code": "17-2051.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 565,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 80,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 2.5,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 387,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 1.43,
+      "E": 1.43,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 127,
+    "category": "Arts",
+    "soc_code": "27-1019.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 3.33,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 549,
+    "category": "Operations Manager",
+    "soc_code": "11-1021.00",
+    "riasec": {
+      "R": 3.75,
+      "I": 0.0,
+      "A": 0.83,
+      "S": 5.83,
+      "E": 7.08,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 470,
+    "category": "Automation Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.34,
+      "C": 2.76
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 747,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.56,
+      "I": 10.0,
+      "A": 0.56,
+      "S": 0.56,
+      "E": 0.0,
+      "C": 0.56
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 44,
+    "category": "HR",
+    "soc_code": "13-1071.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 5.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 826,
+    "category": "DotNet Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 2.67,
+      "S": 0.0,
+      "E": 6.67,
+      "C": 0.67
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 270,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.91,
+      "I": 2.73,
+      "A": 6.36,
+      "S": 3.64,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 618,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 4.23,
+      "S": 4.62,
+      "E": 1.92,
+      "C": 0.38
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 352,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.43,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 1.43
+    },
+    "likes": [
+      "ui-ux",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 867,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 5.0,
+      "S": 10.0,
+      "E": 5.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 367,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.5,
+      "S": 1.0,
+      "E": 0.5,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 99,
+    "category": "Advocate",
+    "soc_code": "23-1011.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 389,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 1.67,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 94,
+    "category": "Advocate",
+    "soc_code": "23-1011.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 952,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 1.0,
+      "E": 0.0,
+      "C": 4.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 344,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.47,
+      "S": 1.47,
+      "E": 0.88,
+      "C": 1.18
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 781,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.15,
+      "S": 1.92,
+      "E": 1.15,
+      "C": 1.15
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 220,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 1.52,
+      "I": 0.0,
+      "A": 8.18,
+      "S": 3.33,
+      "E": 10.0,
+      "C": 3.33
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 159,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 8.57,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 1.43,
+      "C": 2.38
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 926,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 0.71,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.71,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 348,
+    "category": "Java Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.43,
+      "I": 10.0,
+      "A": 2.17,
+      "S": 0.0,
+      "E": 0.87,
+      "C": 1.3
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 945,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 1.0,
+      "E": 0.0,
+      "C": 4.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 714,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 0.87,
+      "I": 10.0,
+      "A": 0.22,
+      "S": 0.43,
+      "E": 0.43,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 163,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 6.67,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 825,
+    "category": "DotNet Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 777,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.44,
+      "I": 10.0,
+      "A": 1.11,
+      "S": 1.11,
+      "E": 0.0,
+      "C": 1.11
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 6,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.87,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.43,
+      "E": 2.61,
+      "C": 1.74
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 890,
+    "category": "Blockchain",
+    "soc_code": "15-1299.07",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 6.5,
+      "S": 1.0,
+      "E": 0.0,
+      "C": 0.5
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 828,
+    "category": "DotNet Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.86,
+      "S": 2.09,
+      "E": 0.23,
+      "C": 0.93
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 284,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 10.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 603,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.8,
+      "A": 0.8,
+      "S": 4.0,
+      "E": 10.0,
+      "C": 4.4
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 459,
+    "category": "Automation Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 5.0,
+      "I": 10.0,
+      "A": 3.75,
+      "S": 3.75,
+      "E": 0.0,
+      "C": 7.5
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 225,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 1.43,
+      "A": 0.0,
+      "S": 1.43,
+      "E": 10.0,
+      "C": 1.43
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 429,
+    "category": "Business Analyst",
+    "soc_code": "15-2051.01",
+    "riasec": {
+      "R": 0.0,
+      "I": 3.33,
+      "A": 6.67,
+      "S": 1.67,
+      "E": 6.67,
+      "C": 10.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 948,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 718,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 0.14,
+      "I": 10.0,
+      "A": 0.28,
+      "S": 0.56,
+      "E": 0.14,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 665,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.8,
+      "A": 2.0,
+      "S": 2.8,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 733,
+    "category": "Database",
+    "soc_code": "15-1242.00",
+    "riasec": {
+      "R": 0.77,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 2.31,
+      "E": 0.15,
+      "C": 1.23
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 203,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 6.0,
+      "I": 5.0,
+      "A": 10.0,
+      "S": 2.0,
+      "E": 0.0,
+      "C": 2.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 574,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 3.33,
+      "S": 1.67,
+      "E": 0.56,
+      "C": 1.11
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 27,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.61,
+      "I": 10.0,
+      "A": 1.43,
+      "S": 1.43,
+      "E": 0.0,
+      "C": 0.82
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 616,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.56,
+      "I": 10.0,
+      "A": 0.56,
+      "S": 2.22,
+      "E": 1.11,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 517,
+    "category": "Operations Manager",
+    "soc_code": "11-1021.00",
+    "riasec": {
+      "R": 3.75,
+      "I": 0.0,
+      "A": 0.83,
+      "S": 5.83,
+      "E": 7.08,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 238,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.35,
+      "A": 1.76,
+      "S": 4.12,
+      "E": 10.0,
+      "C": 1.18
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 223,
+    "category": "Mechanical Engineer",
+    "soc_code": "17-2141.00",
+    "riasec": {
+      "R": 6.0,
+      "I": 5.0,
+      "A": 10.0,
+      "S": 2.0,
+      "E": 0.0,
+      "C": 2.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 95,
+    "category": "Advocate",
+    "soc_code": "23-1011.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 30,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.24,
+      "I": 10.0,
+      "A": 0.71,
+      "S": 0.24,
+      "E": 0.0,
+      "C": 0.24
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 32,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 1.5,
+      "I": 10.0,
+      "A": 2.5,
+      "S": 0.0,
+      "E": 1.5,
+      "C": 0.5
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 432,
+    "category": "SAP Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 8.93,
+      "S": 6.07,
+      "E": 8.57,
+      "C": 0.71
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 604,
+    "category": "DevOps Engineer",
+    "soc_code": "15-1299.08",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 2.59,
+      "S": 3.7,
+      "E": 5.19,
+      "C": 2.22
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 89,
+    "category": "Advocate",
+    "soc_code": "23-1011.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 558,
+    "category": "Python Developer",
+    "soc_code": "15-1252.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 1.67,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 913,
+    "category": "Testing",
+    "soc_code": "15-1253.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 0.0,
+      "A": 5.0,
+      "S": 5.0,
+      "E": 5.0,
+      "C": 5.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 758,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.74,
+      "I": 10.0,
+      "A": 0.37,
+      "S": 1.11,
+      "E": 0.0,
+      "C": 1.11
+    },
+    "likes": [
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Growth",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 692,
+    "category": "PMO",
+    "soc_code": "13-1082.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.0,
+      "A": 2.0,
+      "S": 8.67,
+      "E": 3.33,
+      "C": 10.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 104,
+    "category": "Arts",
+    "soc_code": "27-1019.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 1.67,
+      "A": 5.0,
+      "S": 10.0,
+      "E": 10.0,
+      "C": 1.67
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 754,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.56,
+      "I": 10.0,
+      "A": 0.56,
+      "S": 0.56,
+      "E": 0.0,
+      "C": 0.56
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 142,
+    "category": "Web Designing",
+    "soc_code": "15-1255.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 3.75,
+      "A": 10.0,
+      "S": 2.92,
+      "E": 0.42,
+      "C": 0.83
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 228,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 2.35,
+      "A": 1.76,
+      "S": 4.12,
+      "E": 10.0,
+      "C": 1.18
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 250,
+    "category": "Sales",
+    "soc_code": "41-3091.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 1.43,
+      "A": 0.0,
+      "S": 1.43,
+      "E": 10.0,
+      "C": 1.43
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 281,
+    "category": "Health and fitness",
+    "soc_code": "39-9031.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 3.33,
+      "S": 10.0,
+      "E": 10.0,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "Medium"
+  },
+  {
+    "id": 759,
+    "category": "Hadoop",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 1.07,
+      "I": 10.0,
+      "A": 1.79,
+      "S": 0.71,
+      "E": 1.07,
+      "C": 0.0
+    },
+    "likes": [
+      "ui-ux",
+      "machine-learning",
+      "python"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Passion",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 25,
+    "category": "Data Science",
+    "soc_code": "15-2051.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 10.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 5.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Impact",
+    "financial_flexibility": "Low"
+  },
+  {
+    "id": 114,
+    "category": "Arts",
+    "soc_code": "27-1019.00",
+    "riasec": {
+      "R": 0.0,
+      "I": 0.0,
+      "A": 10.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 0.0
+    },
+    "likes": [],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Money",
+    "financial_flexibility": "High"
+  },
+  {
+    "id": 654,
+    "category": "Network Security Engineer",
+    "soc_code": "15-1212.00",
+    "riasec": {
+      "R": 10.0,
+      "I": 3.0,
+      "A": 0.0,
+      "S": 10.0,
+      "E": 1.0,
+      "C": 4.0
+    },
+    "likes": [
+      "machine-learning"
+    ],
+    "dislikes": [],
+    "intent": "Full-time",
+    "driver": "Balance",
+    "financial_flexibility": "Medium"
+  }
+]
