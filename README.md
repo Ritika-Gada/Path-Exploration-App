@@ -175,7 +175,9 @@ The z-standardized coefficients trained on $769$ profiles (with $12,304$ samples
 
 **Key Interview Defense/Insight:**
 - RIASEC similarity ($\beta_1 = 0.7422$) has roughly twice the predictive weight of tag overlap ($\beta_2 = 0.3974$) in identifying a user's stated career path.
-- **Log-Odds Prior Shift Correction:** Since training used negative sampling ($15:1$), the prior probability of a match is artificially low ($6.25\%$). At inference, we apply a log-prior correction of $+ \log(15.0) \approx +2.708$ to the logit, which recalibrates matching probabilities into a natural $50-95\%$ user-friendly range.
+- **Log-Odds Prior Shift Correction:** Since training used negative sampling ($15:1$ negative-to-positive ratio), the class distribution in the training set represents a biased prior where the positive class base rate is artificially low ($\tau_0 = 1/16 = 6.25\%$). In statistical modeling, training logistic regression under case-control / biased sampling yields consistent, unbiased slope coefficients ($\beta_1, \beta_2$), but biases the intercept ($\beta_0$) downward. To calibrate model output probabilities to reflect a realistic prior where a profile has an equal base rate of match/non-match ($\tau_1 = 0.5$), we apply the standard prior correction (e.g., King & Zeng, 2001) at inference by adjusting the intercept:
+  $$\beta_{0,\text{corrected}} = \beta_0 - \log\left(\frac{\tau_0}{1 - \tau_0}\right) + \log\left(\frac{\tau_1}{1 - \tau_1}\right) = \beta_0 - \log(1/15) + \log(1) = \beta_0 + \log(15.0) \approx \beta_0 + 2.708$$
+  This mathematically corrects for the sample selection bias, producing calibrated matching probabilities under the target prior distribution.
 
 ### Model Evaluation & Ablation
 Evaluating the model against the original heuristic on the held-out test set ($193$ profiles, $1016$ O*NET candidate pool size) yielded:
