@@ -1539,7 +1539,7 @@ CURATED_SOC_MAPPING = {
     "customer_success_manager": "41-3091.00",
     "digital_content_strategist": "27-3043.00",
     "talent_acquisition_partner": "13-1071.00",
-    "agile_scrum_master": "15-1299.09",
+    "agile_scrum_master": "13-1082.00",
     "fintech_financial_planner": "13-2052.00",
     "healthcare_informatics_specialist": "15-1211.01",
     "ecommerce_brand_manager": "11-2021.00",
